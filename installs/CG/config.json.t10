@@ -1,0 +1,227 @@
+{
+    "Node": {
+        "*port": 3333,
+        "allowed_origins": "*",
+        "*session_password": "b6304c88030c5d481d1994f1548a8564",
+        "crypting_keyword": "applesauce",
+        "logging_level": "trace",
+        "logging_directory": "logs",
+        "public_folder": "public",
+        "_allowed_origins": [
+            "*"
+        ]
+    },
+    "Master": {
+        "auth": "defaultauthdefaultofsomething"
+    },
+    "User Interface": {
+        "flowchart_warning_hours": 0.5,
+        "ram_usage_warning_percent": 10,
+        "swap_usage_warning_percent": 10,
+        "disk_usage_warning_percent": 10
+    },
+    "System Monitoring": {
+        "watched_paths": "/, /vm"
+    },
+    "Global Bookmarks List": {
+        "CLEARGOALS": "http://cleargoals.com"
+    },
+    "Watched Servers List": {
+        "T10": "https://target10.cleargoals.com:3333",
+        "T11": "https://target11.cleargoals.com:3333"
+    },
+    "FTP": {
+        "target10": {
+            "protocol": "sftp",
+            "host": "10.0.0.186",
+            "port": 22,
+            "username": "ganna",
+            "password": "913b4c9e151d575e160ed3",
+            "user": "ganna"
+        }
+    },
+    "Captcha": {
+        "active": true,
+        "key": "6Leb0B0TAAAAACYKJkrzx0gMnBHDLrtTIrhMdbed",
+        "secret": "6Leb0B0TAAAAAPOq5yPJYU0YlMgecXLG_JAzEA8S"
+    },
+    "SSL": {
+        "active": true,
+        "key": "./ssl/server.key",
+        "cert": "./ssl/server.crt",
+        "ca": "./ssl/ca.crt",
+        "passphrase": "b036489e0614595e1b1c8cf5428c80"
+    },
+    "LDAP": {
+        "active": true,
+        "url": "10.0.0.243",
+        "port": "389",
+        "baseDN": "dc=cleargoals,dc=com",
+        "anonymousBind": true,
+        "bindDN": "",
+        "bindPassword": ""
+    },
+    "Email": {
+        "active": true,
+        "service": "gmail",
+        "address": "system.alerts@cleargoals.com",
+        "password": "a739409c0650090d1b18c6a6",
+        "display_name": "CLEARGOALS System Alerts"
+    },
+    "IBM EMM": {
+        "active": true,
+        "host": "",
+        "auth": ""
+    },
+    "IBM Cognos": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "sudo -u root /root/start-cognos.sh",
+        "stop": "sudo -u root /root/stop-cognos.sh",
+        "ping": "",
+        "url": "http://target10.cleargoals.com:8080/ibmcognos",
+        "version": "",
+        "version_file": "/vm/cognos10/c10_64/cmplst.txt",
+        "log_folder": "/vm/cognos10/c10_64/logs",
+        "install_log_folder": ""
+    },
+    "IBM WebSphere": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "sudo -u root /root/start-websphere.sh",
+        "stop": "sudo -u root /root/stop-websphere.sh",
+        "ping": "",
+        "url": "http://target10.cleargoals.com/unica/jsp/frameworklogin.jsp",
+        "version": "",
+        "version_file": "/vm/websphere/AppServer/properties/version/WebSphere_Application_Server_Express_v8.0.0_Fix_Pack.fxtag",
+        "log_folder": "/vm/websphere/AppServer/profiles/emm/logs/server1",
+        "install_log_folder": "/vm/websphere/AppServer/logs/postinstall"
+    },
+    "Oracle WebLogic": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "",
+        "install_log_folder": ""
+    },
+    "Apache": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "/vm/emm/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/bin/startWebLogic.sh",
+        "stop": "/vm/emm/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/bin/stopWebLogic.sh",
+        "ping": "",
+        "url": "http://target10.cleargoals.com:7001/console/login/LoginForm.jsp",
+        "version": "",
+        "version_file": "/vm/emm/Oracle/Middleware/Oracle_Home/wlserver/.product.properties",
+        "log_folder": "/vm/emm/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain/servers/AdminServer/logs",
+        "install_log_folder": ""
+    },
+    "Microsoft IIS": {
+        "active": false,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "",
+        "install_log_folder": ""
+    },
+    "General": {
+        "temp_folder": "tmp",
+        "public_folder": "public"
+    },
+    "IBM Marketing Platform": {
+        "active": true,
+        "root": "/vm/emm/Platform"
+    },
+    "IBM Platform Database": {
+        "active": true,
+        "*JDBC_jar": "jdbc/ojdbc6.jar",
+        "sid_dbname": "ORCL",
+        "host": "10.0.0.168",
+        "port": "1521",
+        "username": "T10PLATFORM",
+        "password": "91101aca504f080f4b",
+        "max_pool": "20",
+        "use_override_url": false,
+        "override_url": "jdbc:oracle:thin:T10PLATFORM/password@10.0.0.168:1521:ORCL",
+        "schema": ""
+    },
+    "IBM Campaign": {
+        "active": true,
+        "root": "/vm/emm/Campaign",
+        "default_partition": "partition1",
+        "log_folder_name": "logs",
+        "name": "IBM Campaign Listener",
+        "start": "sudo /vm/emm/Campaign/bin/rc.unica_ac start",
+        "url": "",
+        "log_folder": "/vm/emm/Campaign/logs",
+        "install_log_folder": "",
+        "_bin": "/vm/emm/Campaign/bin",
+        "_partitions": "/vm/emm/Campaign/partitions",
+        "_default_partition": "/vm/emm/Campaign/partitions/partition1",
+        "stop": "",
+        "ping": "",
+        "version": "",
+        "version_file": ""
+    },
+    "IBM Campaign Database": {
+        "active": true,
+        "*JDBC_jar": "jdbc/ojdbc6.jar",
+        "sid_dbname": "ORCL",
+        "host": "10.0.0.168",
+        "port": "1521",
+        "username": "T10CAMPAIGN",
+        "password": "91101aca504f080f4b",
+        "max_pool": "20",
+        "use_override_url": false,
+        "override_url": "jdbc:oracle:thin:T10CAMPAIGN/password@10.0.0.168:1521:ORCL",
+        "schema": ""
+    },
+    "IBM Contact Optimization": {
+        "active": false,
+        "root": "",
+        "name": "IBM Contact Optimization",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "",
+        "install_log_folder": ""
+    },
+    "IBM Distributed Marketing": {
+        "active": false,
+        "root": "/vm/emm/DistributedMarketing"
+    },
+    "IBM Marketing Operations": {
+        "active": true,
+        "root": "/vm/emm/MarketingOperations"
+    },
+    "IBM Interact": {
+        "active": true,
+        "root": "/vm/emm/runtime/Interact"
+    },
+    "IBM SPSS Modeler Advantage": {
+        "active": false,
+        "root": ""
+    }
+}

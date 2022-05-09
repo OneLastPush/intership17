@@ -1,0 +1,24 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/env_report.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-file-text-o
+			span
+				|  #{loc.header.environmentReport}
+		.panel-body
+			form.text-center#genReport
+				button(type='submit').btn.btn-default
+					span
+						|  #{loc.env_report.generatereports}

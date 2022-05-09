@@ -1,0 +1,119 @@
+extends tpl/master_template
+
+
+block appendHead
+	link(rel='stylesheet', href='css/bootstrap.min.css')
+	link(rel='stylesheet', href='css/popup_style.css')
+	link(rel='stylesheet', href='css/FrankCss/jquery.growl.css')
+	script(src='js/jquery/jquery-2.1.0.min.js')
+	script(src='js/FrankJsFile/JavascriptToCsv.js')
+	script(src='js/growl/jquery.growl.js')
+	script(src='js/jquery/jquery-ui-test/jquery-ui-1.10.4.custom.min.js')
+	script(src='js/pop_script.js')
+	script(src='js/bootstrap/bootstrap.js')
+	script(src='js/chartjs/Chart.js')
+	script(src='js/FrankJsFile/chartExample.js')
+	script(src='js/FrankJsFile/sheetJsTest.js')
+	script(src='js/FileSaver.js-master/FileSaver.js')
+	script(src='js/canvas-toBlob.js-master/canvas-toBlob.js')
+	script(src='js/xlsx/xlsx.core.min.js')
+	script(src='js/ExcelPlus-master/2.5/excelplus-2.5.min.js')
+	script(src='js/FrankJsFile/growl.js')
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-tachometer
+			span
+				|  First: Group project
+		.panel-body
+			button.btn.btn-info.btn-lg#openModalBtn(data-backdrop="static", data-keyboard="false", type="button",data-toggle="modal",data-target="#groupModal") Show Modals
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-tachometer
+			span
+				|  CSV download, Xlsx using ExcelPlus and export chart as png
+		.panel-body
+			br
+			br
+			a.btn.btn-info#ddl(role="button" data-backdrop="static", data-keyboard="false", type="button",data-toggle="modal",data-target="#downloadModal") download CSV
+			button.btn.btn-info#downloadXlsx Download Xlsx
+			.container
+				canvas#myChart(width="400",height="400")
+				button#exportChart.btn Export this chart
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-tachometer
+			span
+				|  SheetJS: Xlsx Complex Download (Not implemented yet: insert image)
+		.panel-body
+			br
+			br
+			.container
+				button.btn.btn-info#ComplexDownload SheetJs Download
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-tachometer
+			span
+				|  Growl Message testing
+		.panel-body
+			br
+			br
+			.container
+				button.btn.btn-success#successGrowl You succeded
+				button.btn.btn-danger#dangerGrowl You messed up
+				button.btn.btn-warning#warningGrowl Watch out
+
+
+
+
+
+	.modal.fade#groupModal(role="dialog")
+		.modal-dialog.modal-lg
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal>&times")
+					h4.modal-title Modal Header
+				.modal-body.cg-modal-body
+					form
+						.form-group.col-md-1.col-sm-1.col-xs-1
+
+						.form-group.col-md-4.col-sm-4.col-xs-4
+							label(for="origGroupList") Left
+							ul#origGroupList.form-control.cg-select.connectedSortable
+						.form-group.col-md-2.col-sm-2.col-xs-1
+							.cg-select
+								button#sendRightBtn.btn.btn-primary.center-block.cg-first-btn 
+									i.glyphicon.glyphicon-arrow-right
+								button#sendAllRightBtn.btn.btn-primary.center-block.cg-other-btn 
+									i.glyphicon.glyphicon-fast-forward
+								button#sendLeftBtn.btn.btn-primary.center-block.cg-other-btn 
+									i.glyphicon.glyphicon-arrow-left
+								button#sendAllLeftBtn.btn.btn-primary.center-block.cg-other-btn 
+									i.glyphicon.glyphicon-fast-backward
+						.form-group.col-md-4.col-sm-4.col-xs-4
+							label(for="modifiedGroupList") Right
+							ul#modifiedGroupList.form-control.cg-select.connectedSortable
+						.form-group.col-md-1.col-sm-1.col-xs-1
+							button#moveUpRight.btn.btn-primary.center-block.cg-second-btn
+								i.glyphicon.glyphicon-arrow-up
+							button#moveDownRight.btn.btn-primary.center-block.cg-second-btn
+								i.glyphicon.glyphicon-arrow-down
+
+				.modal-footer
+					button.btn.btn-default#saveBtn(type="button", disabled = 'false',data-dismiss="modal") Save Changes
+					button.btn.btn-default(type="button",data-dismiss="modal") Close
+	.modal.fade#downloadModal(role="dialog")
+		.modal-dialog.modal-lg
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal>&times")
+					h4.modal-title Modal Header
+				.modal-body.cg-modal-body
+					p You add setting in here
+				.modal-footer
+					a.btn.btn-default#downloadCSV(type="button") download
+					button.btn.btn-default(type="button",data-dismiss="modal") Close	

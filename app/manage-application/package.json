@@ -1,0 +1,35 @@
+{
+  "name": "manage-application",
+  "version": "1.2.0",
+  "description": "Provides start, stop & ping commands to an application, url, version & system info, & lets you have access to file system, log files, installation files",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 5000 -b",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "administration",
+    "manage",
+    "application",
+    "start",
+    "stop",
+    "logs",
+    "stats"
+  ],
+  "author": "Ganna Shmatova <ganna.shmatova@cleargoals.com>, Haiyang Huang",
+  "private": true,
+  "dependencies": {
+    "browse_fs": "file:../modules/browse_fs",
+    "errors": "file:../modules/errors",
+    "express": "^4.13.4",
+    "master-slave": "file:../modules/master-slave",
+    "smart-config": "file:../modules/smart-config",
+    "smart-tracer": "file:../modules/smart-tracer",
+    "system_info_monitoring": "file:../modules/system_info_monitoring"
+  },
+  "devDependencies": {
+    "body-parser": "^1.14.2",
+    "mocha": "^2.3.3",
+    "supertest": "^1.2.0"
+  }
+}

@@ -1,0 +1,7 @@
+<Fix InventoryTagVersion="1.0">
+<FixType>Fix Pack</FixType>
+<FixName>WebSphere Application Server - Base v8.5.5 Fix Pack 2</FixName>
+<FixVersion>8.5.5.2</FixVersion>
+<FixID>8.5.5-WS-WAS-FP0000002</FixID>
+<SWGFMIDX>HWASBS855</SWGFMIDX>
+</Fix>

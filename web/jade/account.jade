@@ -1,0 +1,26 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/miscLibs/underscore-min.js')
+	script(src='js/util/JSONBrowser.js')
+	script(src='js/util/users.js')
+	script(src='js/account.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+				span.fa.fa-user
+				|  
+				span
+					|  #{loc.header.account}
+			.panel-body
+				.col-xs-12.unfloat.center-block.max-width-1200
+					#accountDisplay

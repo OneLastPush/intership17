@@ -1,0 +1,37 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/campaign/partitions.js')
+	script(src='js/util/formHelpers.js')
+
+	script(src='js/util/RawFileViewer.js')
+	script(src='js/util/Refresher.js')
+	script(src='js/util/Progress.js')
+
+	script(src='js/ascii_viewer.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-file-text-o
+				|  ASCII Viewer
+		.panel-body
+			.center-block.col-xs-12.unfloat.center-block.max-width-1200
+				form#fileSelect
+					.col-xs-12
+						label(for='path').col-xs-2.text-center.label-control
+							| Path
+						.col-xs-10
+							input(type='text' name='path')#path.form-control
+
+				.row
+				#viewer.panel-body

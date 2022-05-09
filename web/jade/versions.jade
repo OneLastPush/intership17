@@ -1,0 +1,45 @@
+//-
+	@version 2.0.0
+	@author Cristan D'Ambrosio (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/versions.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-barcode
+				span
+					|  #{loc.versions.versions}
+			.panel-body
+				p
+					span
+						|  #{loc.versions.utilityversion}
+
+				br
+
+				#versionsDisplay.row
+					#system.col-md-4
+						h4
+							span
+								|  #{loc.versions.systemversioninformation}
+						#systemVersions
+						br
+					#database.col-md-4
+						h4
+							span
+								|  #{loc.versions.databaseversioninformation}
+						#databaseVersions
+						br
+					#infrastructure.col-md-4
+						h4
+							span
+								|  #{loc.versions.infrastructureinformation}
+						#infrastructureInfo

@@ -1,0 +1,30 @@
+{
+  "name": "smart-tracer",
+  "version": "1.2.2",
+  "description": "Persistent access to tracer version throughout your app or modules extending this module + audits functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 3000 -b"
+  },
+  "keywords": [
+    "conf",
+    "config",
+    "configuration",
+    "key",
+    "value",
+    "storejson",
+    "smart",
+    "lazy"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "tracer": "^0.8.3"
+  },
+  "devDependencies": {
+    "intercept-stdout": "^0.1.2",
+    "mocha": "^2.4.5",
+    "rimraf": "^2.5.2"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "browse_fs",
+  "version": "2.3.3",
+  "description": "Lazy loading and file viewing functionality + some actions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha -b"
+  },
+  "keywords": [
+    "fs",
+    "file",
+    "system",
+    "browse",
+    "lazy"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "body-parser": "^1.12.4",
+    "connect-busboy": "0.0.2",
+    "errors": "file:../errors",
+    "express": "^4.12.4",
+    "find": "^0.2.6",
+    "isbinaryfile": "^2.0.4",
+    "jszip": "^3.0.0",
+    "smart-tracer": "file:../smart-tracer"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "supertest": "^1.0.1"
+  }
+}

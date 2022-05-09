@@ -1,0 +1,65 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova
+	This is the login page, which allows users to login to the website.
+
+doctype html
+html(lang='en')
+	head
+		//- 'head' contains the template metadata, css, and scripts to be used on all pages
+		include tpl/head
+		script(src='js/util/formHelpers.js')
+		script(src='js/login_reset.js')
+	body
+		script(type='text/javascript').
+			var loc = !{loc[page]? JSON.stringify(loc[page]): undefined}; //load javascript localizations if they exist for this page
+			loc.global = !{JSON.stringify(loc['global'])}; //global/error localizations
+		#wrapper
+			br
+			br
+			hr
+			br
+			.col-xs-12.verticalMargins.vertical-padding-large.center-block.unfloat.max-width-900
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title
+							span.glyphicon.glyphicon-log-in
+							|  #{name}
+					.panel-body
+						ul(role='tablist').nav.nav-tabs
+							li.active
+								a(href='#request' role='tab' data-toggle='tab')
+									| #{loc[page].resetEmail}
+							li
+								a(href='#reset' role='tab' data-toggle='tab')
+									| #{loc[page].resetPassword}
+
+						.tab-content
+							#request.tab-pane.fade.in.active
+								form(role='form')#resetEmail.center-block.unfloat.max-width-400.vertical-padding-large
+									.form-group
+										input.form-control(placeholder='#{loc[page].email}', type='text', name='email').required.form-control
+									.form-group
+										input.form-control(placeholder='#{loc[page].username}', type='text', name='username').required.form-control
+									.form-group.text-right
+										input(type='button', value='#{loc[page].sendResetEmail}', data-loading-text='#{loc[page].sending}').btn.btn-default.btn-primary
+									.form-group.msgs
+							#reset.tab-pane.fade
+								form(role='form')#resetPassword.center-block.unfloat.max-width-400.vertical-padding-large
+									.form-group
+										input.form-control(placeholder='#{loc[page].passwordToken}', type='text', name='token').required.form-control
+									.form-group
+										input.form-control(placeholder='#{loc[page].username}', type='text', name='username' autocomplete='off').required.form-control
+									.form-group
+										input.form-control(placeholder='#{loc[page].newPassword}', type='password', name='password' autocomplete='off').required.form-control
+									.form-group
+										input.form-control(placeholder='#{loc[page].confirmPassword}', type='password' autocomplete='off').required.form-control
+									.form-group.text-right
+										input(type='button', value='#{loc[page].changePassword}', data-loading-text='#{loc[page].changing}').btn.btn-default.btn-primary
+									.form-group.msgs
+			br
+			hr
+
+			#push
+		include tpl/footer
+

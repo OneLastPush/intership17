@@ -1,0 +1,13 @@
+node_modules
+*.log
+daemon/*
+internalDB/*
+sessions/*
+logs/*
+data/*
+test/data/*
+tmp/*
+temp/*
+public/*
+archive/*
+config.json

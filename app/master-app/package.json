@@ -1,0 +1,66 @@
+{
+  "name": "cleargoals-maestro",
+  "version": "0.9.7",
+  "description": "IBM Enterprise Marketing Management suite master administration application",
+  "main": "index.js",
+  "entrance": "app.js",
+  "scripts": {
+    "test": "mocha --timeout 40000 -b",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleargoals/AdminExtension.git"
+  },
+  "keywords": [
+    "administration",
+    "marketing",
+    "ibm",
+    "cleargoals"
+  ],
+  "author": "Ganna Shmatova <ganna.shmatova@cleargoals.com>, Ryan McShane Prussin <ryan.prussin@cleargoals.com>, Cristan D'Ambrosio <cristan.dambrosio@cleargoals.com>, Natasha Gabbarmonte, Anthony-Virgil Bermejo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleargoals/AdminExtension/issues"
+  },
+  "homepage": "https://github.com/cleargoals/AdminExtension#readme",
+  "private": true,
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "^1.13.1",
+    "browse_fs": "file:../modules/browse_fs",
+    "browse_ftp": "file:../modules/browse_ftp",
+    "env-vars": "file:../modules/env-vars",
+    "errors": "file:../modules/errors",
+    "escape-string-regexp": "^1.0.4",
+    "expiration": "file:../modules/expiration",
+    "express": "^4.13.3",
+    "express-brute": "^0.6.0",
+    "express-session": "^1.11.3",
+    "fix-path": "file:../modules/fix-path",
+    "ibm-emm": "file:../ibm-emm",
+    "internal_db": "file:../modules/internal_db",
+    "jade": "^1.11.0",
+    "ldap-login": "file:../modules/ldap-login",
+    "login-engine": "file:../modules/login-engine",
+    "manage-application": "file:../manage-application",
+    "master-slave": "file:../modules/master-slave",
+    "moment": "^2.10.6",
+    "morgan": "^1.6.0",
+    "node-windows": "^0.1.7",
+    "nodemailer": "^1.10.0",
+    "request": "^2.72.0",
+    "rimraf": "^2.5.0",
+    "session-file-store": "0.0.14",
+    "smart-config": "file:../modules/smart-config",
+    "smart-tracer": "file:../modules/smart-tracer",
+    "system_info_monitoring": "file:../modules/system_info_monitoring"
+  },
+  "optionalDependencies": {
+    "edge": "5.x"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "supertest-session": "^2.0.0"
+  }
+}

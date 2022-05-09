@@ -1,0 +1,23 @@
+/******************************************************************************
+ * The following CSS is responsible for page accounts-accounts in small size - mobile 
+ ******************************************************************************/
+
+ #accounts .input-group-addon{ padding: 6px; font-size: 12px;}
+ #accounts .form-group{ padding-right: 0px; }
+
+ /**
+ * Only for small size < 970
+ **/
+@media (max-width: 970px) {
+    #accounts .list-group{ padding-right:0px;} 
+    #accounts .form-group{ padding-left: 0px; padding-right: 0px; }  
+}
+
+/**
+ * Only for small size(mobile)<768px
+ **/
+@media (max-width: 768px) {
+   #accounts .form-control{ font-size:12px;}  
+   #accounts .input-group.col-xs-12 .form-control{padding: 6px 4px;}
+   #accounts .form-group.btn-group.pull-right .btn.btn-default{ font-size:13px;}
+}

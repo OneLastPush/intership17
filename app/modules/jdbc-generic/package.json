@@ -1,0 +1,28 @@
+{
+  "name": "jdbc-generic",
+  "version": "2.0.1",
+  "description": "One interface for DB2, Oracle, MS SQL server, & MySQL pings",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b --timeout 60000"
+  },
+  "keywords": [
+    "jdbc",
+    "generic",
+    "db2",
+    "microsoft",
+    "sql",
+    "server",
+    "MySQL",
+    "oracle"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
+  "dependencies": {
+    "jdbc": "^0.1.6",
+    "smart-tracer": "file:../smart-tracer"
+  }
+}

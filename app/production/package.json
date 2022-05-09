@@ -1,0 +1,30 @@
+{
+  "name": "cleargoals-maestro-production",
+  "description": "IBMM Marketing Suite Administrator Compile Application",
+  "author": "Ganna Shmatova <ganna.shmatova@cleargoals.com>",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "Administration",
+    "Marketing",
+    "IBM",
+    "CLEARGOALS"
+  ],
+  "main": "doProduction.js",
+  "scripts": {
+    "start": "node doProduction.js"
+  },
+  "dependencies": {
+    "find": "^0.2.2",
+    "rimraf": "^2.3.4",
+    "uglify-js": "^2.4.23"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cleargoals/AdminExtension/tree/master/app/production"
+  },
+  "bugs": {
+    "url": "https://github.com/cleargoals/AdminExtension/issues"
+  },
+  "homepage": "https://www.cleargoals.com"
+}

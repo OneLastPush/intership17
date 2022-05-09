@@ -1,0 +1,48 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet', href='js/jquery/dataTables/dataTables.bootstrap.css')
+	link(rel='stylesheet', href='js/jquery/dataTables/dataTables.responsive.css')
+	script(src='js/jquery/dataTables/jquery.dataTables.min.js')
+	script(src='js/jquery/dataTables/dataTables.bootstrap.js')
+	script(src='js/jquery/dataTables/dataTables.responsive.js')
+
+	script(src='js/util/Refresher.js')
+	script(src='js/util/conversions.js')
+	script(src='js/util/cookieSaves.js')
+
+	script(src='js/campaign/inboundTrigger.js')
+	script(src='js/campaign/actions.js')
+	script(src='js/campaign/contextMenu.js')
+	script(src='js/campaign/manager.js')
+
+	script(src='js/workspace.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-laptop
+			span
+				|  #{loc.header.workspace}
+			.btn-group.pull-right
+				button.btn.btn-primary#refreshNow
+					span.fa.fa-refresh
+				.btn-group
+					button(data-toggle='dropdown').dropdown-toggle.btn.btn-primary.settingsBtn
+						span.fa.fa-cogs
+					ul.settings.dropdown-menu.text-black.medium-padding.width-220.dropdown-menu-right
+						li
+							label(for='refreshRate')=loc.workspace.refreshRate
+							span.medium-padding
+								input(type='number', max='99', min='1', value="").no-padding#refreshRate
+							label(for='refreshRate')=loc.workspace.seconds
+		.panel-body
+			.max-width-1500.center-block#workspaceManager

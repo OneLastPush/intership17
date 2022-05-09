@@ -1,0 +1,45 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/campaign/userInfo.js')
+	script(src='js/campaign/policyInfo.js')
+	script(src='js/change_ownership.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-tags
+				span
+					|  #{loc[page].changeOwnership}
+			.panel-body
+				p
+					span
+						|  #{loc[page].changeOwnershipDesc}
+
+				form#changeOwnerForm.col-xs-12.max-width-600.unfloat.center-block
+						.form-group
+							label(for='policyId').col-xs-12.form-group.noPadding
+								span
+									|  #{loc[page].policyId}
+							select#policyId(name='policyId').selectpicker.col-xs-12.noPadding
+						.form-group
+							label(for='oldUserIds').col-xs-12.form-group.noPadding
+								span
+									|  #{loc[page].currentOwners}
+							select#oldUserIds(name='oldUserIds', data-live-search='true', multiple, data-selected-text-format="count>3").selectpicker.col-xs-12.noPadding
+						.form-group
+							label(for='newUserId').col-xs-12.form-group.noPadding
+								span
+									|  #{loc[page].newOwner}
+							select#newUserId(name='newUserId', data-live-search='true').selectpicker.col-xs-12.noPadding
+						.form-group
+							input(type='submit', value='#{loc[page].changeOwner}', data-loading-text='#{loc[page].changingOwner}').pull-right.btn.btn-default

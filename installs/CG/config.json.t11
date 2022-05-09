@@ -1,0 +1,227 @@
+{
+    "Node": {
+        "*port": 3333,
+        "allowed_origins": "*",
+        "*session_password": "b6304c88030c5d481d1994f1548a8564",
+        "crypting_keyword": "applesauce",
+        "logging_level": "trace",
+        "logging_directory": "logs",
+        "public_folder": "public",
+        "_allowed_origins": [
+            "*"
+        ]
+    },
+    "Master": {
+        "auth": "defaultauthdefaultofsomething"
+    },
+    "User Interface": {
+        "flowchart_warning_hours": 0.5,
+        "ram_usage_warning_percent": 10,
+        "swap_usage_warning_percent": 10,
+        "disk_usage_warning_percent": 10
+    },
+    "System Monitoring": {
+        "watched_paths": "c:/, d:/"
+    },
+    "Global Bookmarks List": {
+        "CLEARGOALS": "http://cleargoals.com"
+    },
+    "Watched Servers List": {
+        "T11": "https://target11.cleargoals.com:3333",
+        "T10": "https://target10.cleargoals.com:3333"
+    },
+    "FTP": {
+        "target10": {
+            "protocol": "sftp",
+            "host": "10.0.0.186",
+            "port": 22,
+            "username": "ganna",
+            "password": "913b4c9e151d575e160ed3",
+            "user": "ganna"
+        }
+    },
+    "Captcha": {
+        "active": true,
+        "key": "6Leb0B0TAAAAACYKJkrzx0gMnBHDLrtTIrhMdbed",
+        "secret": "6Leb0B0TAAAAAPOq5yPJYU0YlMgecXLG_JAzEA8S"
+    },
+    "SSL": {
+        "active": true,
+        "key": "./ssl/server.key",
+        "cert": "./ssl/server.crt",
+        "ca": "./ssl/ca.crt",
+        "passphrase": "b036489e0614595e1b1c8cf5428c80"
+    },
+    "LDAP": {
+        "active": true,
+        "url": "10.0.0.243",
+        "port": "389",
+        "baseDN": "dc=cleargoals,dc=com",
+        "anonymousBind": true,
+        "bindDN": "",
+        "bindPassword": ""
+    },
+    "Email": {
+        "active": true,
+        "service": "gmail",
+        "address": "system.alerts@cleargoals.com",
+        "password": "a739409c0650090d1b18c6a6",
+        "display_name": "CLEARGOALS System Alerts"
+    },
+    "IBM EMM": {
+        "active": true,
+        "host": "",
+        "auth": ""
+    },
+    "IBM Cognos": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "net start \\\"IBM Cogno\\\"",
+        "stop": "net stop \\\"IBM Cognos\\\"",
+        "ping": "",
+        "url": "http://target11.cleargoals.com/ibmcognos/cgi-bin/cognos.cgi",
+        "version": "",
+        "version_file": "d:/cognos10/cmplst.txt",
+        "log_folder": "d:/cognos10/logs",
+        "install_log_folder": ""
+    },
+    "IBM WebSphere": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "net stop \"IBMWAS85Service - TARGET11Node01\"",
+        "stop": "net stop \"IBMWAS85Service - TARGET11Node01\"",
+        "ping": "",
+        "url": "http://target11.cleargoals.com:9080/unica/jsp/frameworklogin.jsp",
+        "version": "",
+        "version_file": "D:/IBM/WebSphere/AppServer/properties/version/WebSphere_Application_Server_-_Base_v8.5.5_Fix_Pack.fxtag",
+        "log_folder": "D:/IBM/WebSphere/AppServer/profiles/AppSrv01/logs/server1",
+        "install_log_folder": "D:/IBM/WebSphere/AppServer/logs/postinstalll"
+    },
+    "Oracle WebLogic": {
+        "active": false,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "",
+        "install_log_folder": ""
+    },
+    "Apache": {
+        "active": false,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "",
+        "install_log_folder": ""
+    },
+    "Microsoft IIS": {
+        "active": true,
+        "host": "",
+        "auth": "",
+        "name": "",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "C:\\inetpub\\logs\\LogFiles\\W3SVC2",
+        "install_log_folder": ""
+    },
+    "General": {
+        "temp_folder": "tmp",
+        "public_folder": "public"
+    },
+    "IBM Marketing Platform": {
+        "active": true,
+        "root": "d:/emm/Platform"
+    },
+    "IBM Platform Database": {
+        "active": true,
+        "*JDBC_jar": "jdbc/db2jcc4.jar",
+        "sid_dbname": "EMMSYS",
+        "host": "localhost",
+        "port": "50000",
+        "username": "EMM",
+        "password": "91101aca504f080f4b",
+        "max_pool": "20",
+        "use_override_url": false,
+        "override_url": "jdbc:db2://localhost:50000/EMMSYS",
+        "schema": ""
+    },
+    "IBM Campaign": {
+        "active": true,
+        "root": "D:\\emm\\Campaign",
+        "default_partition": "partition1",
+        "log_folder_name": "logs",
+        "name": "IBM Campaign Listener",
+        "start": "net start unica_aclsnr",
+        "url": "",
+        "log_folder": "D:\\emm\\Campaign\\logs",
+        "install_log_folder": "",
+        "_bin": "D:\\emm\\Campaign\\bin",
+        "_partitions": "D:\\emm\\Campaign\\partitions",
+        "_default_partition": "D:\\emm\\Campaign\\partitions\\partition1",
+        "stop": "",
+        "ping": "",
+        "version": "",
+        "version_file": ""
+    },
+    "IBM Campaign Database": {
+        "active": true,
+        "*JDBC_jar": "jdbc/db2jcc4.jar",
+        "sid_dbname": "EMMSYS",
+        "host": "localhost",
+        "port": "50000",
+        "username": "EMM",
+        "password": "91101aca504f080f4b",
+        "max_pool": "20",
+        "use_override_url": false,
+        "override_url": "jdbc:db2://localhost:50000/EMMSYS",
+        "schema": ""
+    },
+    "IBM Contact Optimization": {
+        "active": false,
+        "root": "",
+        "name": "IBM Contact Optimization",
+        "start": "",
+        "stop": "",
+        "ping": "",
+        "url": "",
+        "version": "",
+        "version_file": "",
+        "log_folder": "",
+        "install_log_folder": ""
+    },
+    "IBM Distributed Marketing": {
+        "active": false,
+        "root": ""
+    },
+    "IBM Marketing Operations": {
+        "active": true,
+        "root": "d:/emm/MarketingOperations"
+    },
+    "IBM Interact": {
+        "active": false,
+        "root": ""
+    },
+    "IBM SPSS Modeler Advantage": {
+        "active": false,
+        "root": ""
+    }
+}

@@ -1,0 +1,51 @@
+/******************************************************************************
+ * The following CSS is responsible for page accounts-groups in small size - mobile 
+ ******************************************************************************/
+
+ #groups .form-group{ padding-right: 0px; }
+ #shortUrl {font-size: 11px;}
+ #rotate.visible-xs-block{display:none;}
+
+ /**
+ * Only for small size < 970
+ **/
+@media (max-width: 970px) {
+    #groups .list-group{ padding-right:0px;} 
+    #groups .form-group{ padding-left: 0px; padding-right:0px;} 
+}
+
+/**
+ * Only for small size(mobile)<768px
+ **/
+ @media (max-width: 768px) {
+   #groups .form-group.btn-group.pull-right .btn.btn-default{ font-size:13px;}
+   #groups .form-control{ font-size:11px; padding:6px 2px;}
+   #groups .form-control .badge.pull-right.alert-success{ padding:3px 5px;}  
+   #groups .list-group{ padding-right:0px;} 
+   #groups .form-group{ padding-left: 0px; padding-right: 0px; }
+   #groups .input-group.form-group.col-xs-12 {display:inline-block;}
+   #groups .input-group.col-xs-offset-4.col-xs-8{display:inline-block; margin-left:0;width: 99.667%}
+   #groups .input-group-addon{ padding: 6px;}
+   #groups .btn-group.bootstrap-select.show-tick.input-group-btn.form-control{ padding:0;}
+   #groups .input-group.col-xs-offset-4.col-xs-8 .input-group-btn .btn.btn-default{padding: 6px;}
+   #groups .input-group.col-xs-offset-4.col-xs-8 .input-group-btn{margin:0 auto;}
+   #groups .btn.dropdown-toggle.selectpicker.btn-default{padding:6px;}
+   #groups .btn.dropdown-toggle.selectpicker.btn-default .filter-option.pull-left{font-size:11px;}
+   #permissions{display: none;}
+   #rotate.visible-xs-block{display:table-cell;}
+   #rotate.visible-xs-block{height: 108px;white-space: nowrap;line-height: 52px;padding-top: 50px;}
+   #rotate.visible-xs-block span{width: 35px;transform: rotate(-90deg);height: 52px;vertical-align: bottom;float: left;}
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait and Landscape */
+@media (max-width: 340px){
+   #groups .input-group.col-xs-offset-4.col-xs-8 .input-group-btn .btn.btn-default{padding:1.7%;}
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */
+@media (max-width: 320) {
+     #groups .input-group.col-xs-offset-4.col-xs-8 .input-group-btn .btn.btn-default{padding: 1.7%;}
+}
+ 

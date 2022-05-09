@@ -1,0 +1,52 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/campaign/campaignFile.js')
+	script(src='js/debug_report.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-info-circle
+			span
+				|  #{loc.debug_report.flowchartdebugreport}
+		.panel-body
+			form#debugForm.max-width-1200.center-block
+				.form-group.col-xs-12.col-md-4
+					label(for="partition").col-xs-4
+						span
+							|  #{loc.global.partition}
+					select(name="partition")#partition.selectpicker.col-xs-8.no-padding.no-margin
+				.form-group.col-xs-12.col-md-8
+					label(for="path").col-xs-12.col-sm-2
+						span
+							|  #{loc.debug_report.flowchart}
+					select(data-live-search="true" name="flowchart")#path.col-xs-12.col-sm-10.selectpicker.no-padding.no-margin.campFile
+
+				.row
+				.form-group.col-xs-12.col-sm-6
+					.checkbox
+						label
+							input(type='checkbox' name='cognosLog')
+							span
+								|  #{loc.debug_report.includecognoslogfiles}
+				.form-group.col-xs-12.col-sm-6
+					.checkbox
+						label
+							input(type='checkbox' name='webLog')
+							span
+								|  #{loc.debug_report.includewebserverlogfiles}
+				.row
+				.text-center
+					button(type='submit' data-loading-text='Generating Report...').btn.btn-default
+						span.fa.fa-download
+						span
+							|  #{loc.debug_report.downloadreport}

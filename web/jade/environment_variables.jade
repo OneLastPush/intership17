@@ -1,0 +1,53 @@
+//-
+	@version 2.0.0
+	@author Cristan D'Ambrosio (2014)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet', href='js/KeyValueTable/KeyValueTable.css')
+	script(src='js/KeyValueTable/KeyValueTable.js')
+	script(src='js/environment_variables.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				spanspan.icon-control-panel
+				span
+					|  #{loc.header.environment_variables}
+			.panel-body
+				p
+					span
+						|  #{loc.environment_variables.environmentvariablesused}
+					strong
+						span
+							|  #{loc.environment_variables.ibm}
+					sup
+						span
+							|  #{loc.environment_variables.r}
+					strong
+						span
+							|  #{loc.environment_variables.campaignlistener}
+					spanfpan
+						|  #{loc.environment_variables.canbeviewedmodifiedadded}
+					span
+						|  #{loc.environment_variables.anychangesapplied}
+					strong
+						span
+							|  #{loc.environment_variables.ibm}
+					sup
+						span
+							|  #{loc.environment_variables.r}
+					strong
+						span
+							|  #{loc.environment_variables.campaignlistener}
+					span
+						|  #{loc.environment_variables.isrestarted}
+
+				.col-xs-12.unfloat.center-block.max-width-1300
+					.panel.overflow#envTable

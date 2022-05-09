@@ -1,0 +1,179 @@
+//-
+	v2.0.0
+	This file represents a standard header to be used for navigation on many pages of
+	a website. It uses multiple Bootstrap 3.1.1 constructs for navbar elements, and
+	includes responsive design support for various display sizes.
+
+nav(role='navigation').navbar.navbar-default.navbar-fixed-top
+	.container-fluid
+		.navbar-header
+			button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navMenu')
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='dashboard.html')
+				#logo
+				#admin.hidden-sm.hidden-xs.blue
+					| Maestro
+		.navbar-collapse.collapse#navMenu
+			div.hidden-sm.hidden-md
+				ul.nav.navbar-nav
+					li
+						a(href='dashboard.html')
+							span.fa.fa-tachometer.blue
+							span
+								|  #{loc.header.dashboard}
+					li
+						a(href='workspace.html')
+							span.fa.fa-laptop.blue
+							span
+								|  #{loc.header.workspace}
+					li
+						a(href='browse.html')
+							span.fa.fa-folder-open.blue
+							span
+								|  #{loc.header.browse}
+			div.visible-md.hidden-lg.hidden-xs.visible-sm
+				ul.nav.navbar-nav
+					li.dropdown
+						a.dropdown-toggle(href='#nav', data-toggle="dropdown")
+							span.fa.fa-compass.blue
+							span
+								|  #{loc.header.navigation}
+							span.caret
+						ul.dropdown-menu(data-role='menu')
+							li
+								a(href='dashboard.html')
+									span.fa.fa-tachometer.blue
+									span
+										|  #{loc.header.dashboard}
+							li
+								a(href='workspace.html')
+									span.fa.fa-laptop.blue
+									span
+										|  #{loc.header.workspace}
+							li
+								a(href='browse.html')
+									span.fa.fa-folder-open.blue
+									span
+										|  #{loc.header.browse}
+
+			ul.nav.navbar-nav
+				li.dropdown
+					a.dropdown-toggle(href='#maintenance', data-toggle="dropdown")
+						span.fa.fa-wrench.blue
+						span
+							|  #{loc.header.maintenance}
+						span.caret
+					ul.dropdown-menu
+						li
+							a(href='inbound_trigger.html')
+								span.fa.fa-bullseye.blue
+								span
+									|  #{loc.header.inboundTrigger}
+						li(class="#{permissions.indexOf('review log files') != -1? '': 'hidden'}")
+							a(href='log_viewer.html')
+								span.glyphicon.glyphicon-eye-open.blue
+								span
+									|  #{loc.header.logViewer}
+						li
+							a(href='clean.html')
+								span.fa.fa-trash-o
+								span
+									|  #{loc.header.clean}
+						li
+							a(href='change_ownership.html')
+								span.fa.fa-tags
+								span
+									|  #{loc.header.changeOwnership}
+						li.divider
+						li
+							a(href='send_email.html')
+								span.fa.fa-envelope-o
+								span
+									|  #{loc.header.sendEmail}
+						//- not done 
+						li.hidden
+							a(href='audits.html')
+								span.fa.fa-area-chart
+								span
+									|  #{loc.header.audits}
+						li
+							a(href='env_report.html')
+								span.fa.fa-file-text-o
+								span
+									|  #{loc.header.environmentReport}
+				li.dropdown
+					a.dropdown-toggle(href='#advanced', data-toggle="dropdown")
+						span.fa.fa-plus-circle.blue
+						span
+							|  #{loc.header.advanced}
+						span.caret
+					ul.dropdown-menu
+						li(class="#{permissions.indexOf('access console') != -1? '': 'hidden'}")
+							a(href='console.html')
+								span.fa.fa-terminal.blue
+								span
+									|  #{loc.header.console}
+						li
+							a(href='start_stop.html')
+								span.fa.fa-power-off.blue
+								span
+									|  #{loc.header.startStop}
+						li
+							a(href='environment_variables.html')
+								span.icon-control-panel.blue
+								span
+									|  #{loc.header.environmentVariables}
+						li.divider
+						li
+							a(href='versions.html')
+								span.fa.fa-barcode.blue
+								span
+									|  #{loc.header.versions}
+						li(class="#{permissions.indexOf('read / write config') != -1? '': 'hidden'}")
+							a(href='admin_configs.html')
+								span.fa.fa-cog.blue
+								span
+									|  #{loc.header.configuration}
+						li(class="#{permissions.indexOf('add / remove / modify users') != -1? '': 'hidden'}")
+							a(href='accounts.html')
+								span.fa.fa-users.blue
+								span
+									|  #{loc.header.manageAccounts}
+						li
+							a(href='about.html')
+								span.fa.fa-info-circle.blue
+								span
+									|  #{loc.header.about}
+
+
+			ul.navbar-nav.nav.navbar-right
+				li#accountDropdown.rightMargin.dropdown
+					a#accountBtn.dropdown-toggle(href="account", data-toggle="dropdown")
+						span.glyphicon.glyphicon-user.blue
+						span.account-name
+							| #{Name.First} #{Name.Last} (#{Username})
+						span.caret
+					ul#accountUL.dropdown-menu(data-role='menu')
+						li
+							a(href='account.html')
+								span.fa.fa-user.blue
+								span
+									|  #{loc.header.account}
+
+						li
+							a#logoutBtn(href="logout")
+								span.glyphicon.glyphicon-log-out.blue
+								span
+									|  #{loc.header.logout}
+						li.divider
+						li.dropdown-header(data-role='presentation')
+							span
+								|  #{loc.header.bookmarks}
+						each v, k in gBookmarks
+							li
+								a(href='#{v}' target='_blank')=k
+						each b in Bookmarks
+							li
+								a(href='#{b.value}' target='_blank')=b.key

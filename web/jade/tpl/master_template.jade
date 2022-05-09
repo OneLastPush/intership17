@@ -1,0 +1,37 @@
+//-
+	v2.0.0
+	This is the master template, which pieces together all the reusable html elements
+	into one page to increase readability and efficiency while avoiding code reuse.
+
+doctype html
+html(lang='en')
+
+	//- Metadata, css, and scripts
+	head
+		//- 'head' contains the template metadata, css, and scripts to be used on all pages
+		include head
+
+		//-
+			appendHead allows individual pages to add additional metadata, css, and scripts
+			unique to that page
+		block appendHead
+	body
+		script(type='text/javascript').
+			var loc = !{loc[page]? JSON.stringify(loc[page]): undefined}; //load javascript localizations if they exist for this page
+			loc.global = !{JSON.stringify(loc['global'])}; //global/error localizations
+			var permissions = !{JSON.stringify(permissions)}; //load permissions list
+		//-
+			#wrapper is a div element used in Ryan Fait's sticky footer method to ensure that the
+			footer always stays at the botom of the screen, or is pushed down if there is too
+			much content (Google Search: "Ryan Fait" + "sticky footer" if you want more info)
+		#wrapper
+			//- Adds a header navbar that is used for navigation and logging out on many web pages
+			include header
+
+			//- When other pages extend the master_template they will place content in this block
+			block content
+
+			//- #push is another div element used in Ryan Fait's sticky footer method
+			#push
+		//- Adds a footer which contains support information on many web pages
+		include footer

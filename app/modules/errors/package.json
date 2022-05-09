@@ -1,0 +1,31 @@
+{
+  "name": "errors",
+  "version": "4.1.0",
+  "description": "customizable errors module that plugs into express' res obj (res.error(new Error('failed')))",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b --timeout 15000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cleargoals/AdminExtension/tree/modularized/app/modules/errors"
+  },
+  "keywords": [
+    "errors",
+    "express",
+    "plug-and-play"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "dependencies": {
+    "node-ini": "^1.0.0",
+    "smart-tracer": "file:../smart-tracer"
+  },
+  "devDependencies": {
+    "express": "^4.13.1",
+    "mocha": "^2.3.3",
+    "supertest": "^1.0.1",
+    "tracer": "^0.7.4"
+  }
+}

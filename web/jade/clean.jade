@@ -1,0 +1,76 @@
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/formHelpers.js')
+	script(src='js/campaign/partitions.js')
+	script(src='js/ServerCmds/campaign.js')
+	script(src='js/clean.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+				span.fa.fa-trash-o
+				span
+					|  #{loc.header.clean}
+			.panel-body
+				.center-block.col-xs-12.col-sm-12.col-md-11.col-lg-10.unfloat
+					form#cleanSearch.col-md-5.col-xs-12
+						.center-block.max-width-600
+							h3.page-header.text-left
+								span!=loc.clean.options
+							.row
+								.form-group
+									label(for="type")
+										span
+											|  #{loc.clean.searchFor}
+									select(name='type')#type.col-xs-7.selectpicker.no-padding.no-margin.form-control
+										option(value='orphan')!=loc.clean.orphans
+										option(value='flowchart')!=loc.clean.flowchart
+										option(value='campaign')!=loc.clean.campaign
+										option(value='session')!=loc.clean.session
+										option(value='campaignfolder')!=loc.clean.campaignFolder
+										option(value='sessionfolder')!=loc.clean.sessionFolder
+							.row
+								.form-group
+									label(for="partition")
+										span
+											|  #{loc.global.partition}
+									select(name="partition")#partition.selectpicker.col-xs-12.no-padding.no-margin.from-control
+							.row#criteriaHide
+								.form-group
+									label(for="criteria").reqLabel
+										span
+											|  #{loc.clean.sqlSearch}
+									input(type="text" name="criteria")#criteria.col-xs-7.medium-padding.required.form-control
+							.row
+								.verticalMargins
+									input(type='submit', value='#{loc.clean.search}' data-loading-text='#{loc.clean.searching}').btn.btn-default.pull-right
+					form#cleanDelete.col-md-6.col-md-offset-1.col-xs-12
+						.center-block.max-width-600
+							h3.page-header.text-left
+								span
+									|  #{loc.clean.filesFound}
+							.row.verticalMargins
+								.well.well-sm.pre-scrollable#searchResults
+									span
+										|  #{loc.clean.nothing}
+							.row.verticalMargins
+								.center-block.text-right
+									.btn-group
+										input(disabled type='submit', value='#{loc.clean.cleanFiles}', data-loading-text='#{loc.clean.cleaning}').btn.btn-default
+										.btn.btn-default(data-toggle="collapse" href="#loggingLevel")
+											span.caret
+							.row.verticalMargins.collapse#loggingLevel
+								.form-group
+									label(for="logging").col-xs-12
+										span
+											|  #{loc.clean.logDeleteAt}
+									select(name='logging')#logging.col-xs-12.selectpicker.no-padding.no-margin.form-control
+										option(value='low')!=loc.clean.low
+										option(value='medium' selected)!=loc.clean.medium
+										option(value='high')!=loc.clean.high
+										option(value='all')!=loc.clean.all

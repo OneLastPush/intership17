@@ -1,0 +1,14 @@
+/** editable table inputs */
+.editable-table input{
+  width: 100%;
+  margin: 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border: 0px;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+}
+.editable-table .input-group .input-group-addon{
+  border-left: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+}

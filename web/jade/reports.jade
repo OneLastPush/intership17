@@ -1,0 +1,139 @@
+//-
+	@version 2.0.0
+	@author Cristan D'Ambrosio (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/formHelpers.js')
+	script(src='js/campaign/partitions.js')
+	script(src='js/campaign/fileChecker.js')
+
+	script(src='js/reports.js')
+	script(src='js/miscLibs/d3.min.js')
+	script(src='js/miscLibs/d3-tip.js')
+	script(src='js/util/d3ChartProfile.js')
+	script(src='js/util/d3ChartXTab.js')
+
+	link(rel='stylesheet', href='js/jquery/dataTables/dataTables.bootstrap.css')
+	link(rel='stylesheet', href='js/jquery/dataTables/dataTables.responsive.css')
+	script(src='js/jquery/dataTables/jquery.dataTables.min.js')
+	script(src='js/jquery/dataTables/dataTables.bootstrap.js')
+	script(src='js/jquery/dataTables/dataTables.responsive.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+			span.fa.fa-file-text
+			span
+				|  #{loc.reports.reports}
+		.panel-body
+			div(role='tabpanel').center-block.col-xs-12
+				ul(role='tablist').nav.nav-tabs.nav-justified#steps
+					li(role='presentation')
+						a(href='#flowchartForm' role='tab' data-toggle='tab')
+							span
+								|  #{loc.debug_report.flowchart}
+					li(role='presentation')
+						a(href='#reportForm' role='tab' data-toggle='tab')
+							span
+								|  #{loc.reports.reportgeneration}
+					li(role='presentation')
+						a(href='#report' role='tab' data-toggle='tab')
+							span
+								|  #{loc.reports.report}
+
+				.panel-body.tab-content
+
+					#flowchartForm(role='tabpanel').tab-pane.fade.max-width-600.center-block
+						form
+							.form-group
+								label(for='partition').control-label.col-xs-12
+									span
+										|  #{loc.log_viewer.partition}
+								.col-xs-12
+									select(name='partition')#partition.selectpicker.form-control
+							.form-group
+								label(for='file').control-label.reqLabel.col-xs-12.top-margin
+									span
+										|  #{loc.recompute.fileflowchart}
+								.col-xs-12
+									input(name='file' class="langplaceholder-flowchartfile" placeholder='Flowchart file')#file.form-control.required.campFile
+
+							.row
+								.btn.btn-default(data-loading-text='Retrieving flowchart data...').pull-right.top-margin
+									span
+										|  #{loc.reports.getflowchartdata}
+
+					#reportForm(role='tabpanel').tab-pane.fade.max-width-600.center-block
+						form
+							.panel
+								.form-group
+									label(for='cell').control-label.col-xs-12
+										span
+											|  #{loc.reports.cell}
+
+										select(name='cell')#cell.selectpicker.form-control
+
+								.form-group
+									label(for='type').control-label.col-xs-12.top-margin
+										span
+											|  #{loc.reports.reporttype}
+
+										select(name='type')#type.selectpicker.form-control
+											option(value='profile').lang-profile
+											option(value='xtab').lang-crosstab
+											option(value='cellcontent').lang-samplecontent
+
+								.form-group
+									label(for='fields').control-label.col-xs-12.top-margin
+										span
+											|  #{loc.reports.field}
+
+										select(name='fields' multiple data-max-options='1' data-live-search='true')#fields.selectpicker.form-control
+
+							//profiling
+							#profiling.col-xs-12
+								.form-group
+									label(for='bins').control-label.top-margin
+										span
+											|  #{loc.reports.numberofbins}
+
+									input(type='number' name='bins', class="langplaceholder-defaultlabel", placeholder='default')#bins.form-control
+								.form-group.col-xs-12.col-sm-4.hidden
+								//always yes
+									.checkbox.center-block.text-center
+										label.control-label
+											input(type='checkbox' name='meta' checked)#meta.unfloat
+											span
+												|  #{loc.reports.includemeta}
+							//sampling
+							#sampling.col-xs-12.hidden
+								.form-group
+									label(for='records').control-label.top-margin
+										span
+											|  #{loc.reports.numberofrecords}
+
+									input(type='number' name='records', class="langplaceholder-defaultlabel" placeholder='default')#records.form-control
+								.form-group.col-xs-12
+									.checkbox
+										label.control-label.top-margin
+											input(type='checkbox' name='skipdups')#skipdups.unfloat
+											span
+												|  #{loc.reports.skipduplicate}
+
+							.form-group.pull-right
+								.btn.btn-default(data-loading-text='Generating report...')
+									span
+										|  #{loc.env_report.generatereports}
+
+					#report(role='tabpanel').tab-pane.fade
+						#reportInfo.col-xs-12.h3.text-center
+							span#displayType
+							span#displayCell.small
+						#reportDisplay.col-xs-12

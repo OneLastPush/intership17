@@ -1,0 +1,47 @@
+//-
+	@version 2.0.0
+	@author Cristan D'Ambrosio (2014)
+
+extends tpl/master_template
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-info
+				span
+					|  #{loc.header.about}
+			.panel-body
+				p
+					strong
+						span
+							|  #{loc.about.cleargoals}
+					sup
+						span
+							|  #{loc.environment_variables.r}
+					strong
+						span
+							|  #{loc.about.product}
+					br
+					br
+					span
+						| #{loc.about.version}: #{version}
+					br
+					br
+					span
+						|  #{loc.about.statement_a}
+					br
+					br
+					span
+						|  #{loc.about.statement_b}
+					br
+					br
+					span
+						|  #{loc.about.copyright}
+
+				.col-xs-12.unfloat.center-block.max-width-1300
+					.panel.overflow#envTable

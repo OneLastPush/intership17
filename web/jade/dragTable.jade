@@ -1,0 +1,44 @@
+block appendHead
+	link(rel='stylesheet', href='css/bootstrap.min.css')
+	link(rel='stylesheet', href='css/popup_style.css')
+	link(rel='stylesheet', href='css/popup_style.css')
+	link(rel='stylesheet', href='css/FrankCss/jquery.growl.css')
+	script(src='js/jquery/jquery-2.1.0.min.js')
+	script(src='js/FrankJsFile/JavascriptToCsv.js')
+	script(src='js/growl/jquery.growl.js')
+	script(src='js/jquery/jquery-ui-test/jquery-ui-1.10.4.custom.min.js')
+	script(src='js/pop_script.js')
+	script(src='js/bootstrap/bootstrap.js')
+	script(src='js/chartjs/Chart.js')
+	script(src='js/FrankJsFile/chartExample.js')
+	script(src='js/FrankJsFile/sheetJsTest.js')
+	script(src='js/FileSaver.js-master/FileSaver.js')
+	script(src='js/canvas-toBlob.js-master/canvas-toBlob.js')
+	script(src='js/xlsx/xlsx.core.min.js')
+	script(src='js/ExcelPlus-master/2.5/excelplus-2.5.min.js')
+	script(src='js/FrankJsFile/growl.js')
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-tachometer
+			span
+				|  Dragabble div
+		.panel-body
+		button#createDragDiv.btn Add more Div
+		.container.border
+			.draggableDiv
+				ul.tableOptionBar
+					li Search
+					li Run
+					li Export
+					li Zoom In
+					li Zoom Out
+					li Delete
+					li Configure
+					li Save
+					li Unhide All
+					li View

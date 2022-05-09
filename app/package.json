@@ -1,0 +1,32 @@
+{
+  "name": "cleargoals-maestro-package",
+  "version": "1.0.0",
+  "description": "all components/modules/features of CLEARGOALS Maestro in modularized packages",
+  "main": "updater.js",
+  "scripts": {
+    "test": "node tester.js",
+    "start": "node updater.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleargoals/AdminExtension.git"
+  },
+  "keywords": [
+    "cleargoals",
+    "ibm",
+    "marketing",
+    "admin",
+    "administrator",
+    "emm"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cleargoals/AdminExtension/issues"
+  },
+  "homepage": "https://github.com/cleargoals/AdminExtension#readme",
+  "devDependencies": {
+    "find": "^0.2.3",
+    "rimraf": "^2.4.3"
+  }
+}

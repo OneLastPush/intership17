@@ -1,0 +1,46 @@
+extends tpl/master_template
+
+block appendHead
+	//- pre req for fancy tree
+	script(src='js/jquery/jquery-ui/jquery-ui.min.js')
+	link(rel='stylesheet', href='js/fancytree/skin/ui.fancytree.min.css')
+	script(src='js/fancytree/jquery.fancytree.min.js')
+
+	script(src='js/util/fileBrowser.js')
+	script(src='js/util/button.js')
+
+	script(src='js/campaign/policyInfo.js')
+	script(src='js/campaign/userInfo.js')
+	script(src='js/jquery/jquery.form.js')
+	script(src='js/campaign/actions.js')
+	script(src='js/util/fileDigest.js')
+
+	link(rel='stylesheet', href='css/browse.css')
+	script(src='js/browse.js')
+
+block content
+	br
+	br
+	br
+	br
+	.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-folder-open
+			span
+				|   #{loc.header.browse}
+		.panel-body
+			.col-sm-5.col-xs-12.pull-left
+				p
+					| #{loc.browse.showingFilesWithExt}: 
+					strong#extensions
+				.row
+				.form-group
+					label(for='#location').medium-padding
+						span
+							| #{loc.browse.location}
+					select(name='location')#location.selectpicker
+				.row
+					#browser.well.max-height-500
+
+			.col-sm-6.col-sm-offset-1.col-xs-12.pull-right
+				#fileInfo

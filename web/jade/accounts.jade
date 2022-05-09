@@ -1,0 +1,42 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/miscLibs/underscore-min.js')
+	script(src='js/util/JSONBrowser.js')
+	script(src='js/util/users.js')
+	script(src='js/util/groups.js')
+	script(src='js/accounts.js')
+
+	//- Custom CSS (try only for small size-mobile)
+	link(rel='stylesheet', href='css/accounts.css')
+	link(rel='stylesheet', href='css/groups.css')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-users
+				span
+					|   #{loc.header.manageAccounts}
+			.panel-body
+				.col-xs-12.unfloat.center-block.max-width-1300
+					ul.nav.nav-tabs(role="tablist").scrollable-tabs.fillWidth
+						li
+							a(href='#accounts' role='tab' data-toggle='tab')
+								|   #{loc.accounts.accounts}
+						li
+							a(href='#groups' role='tab' data-toggle='tab')
+								|   #{loc.accounts.groups}
+					.tab-content
+						#accounts.tab-pane.fade
+							br
+						#groups.tab-pane.fade
+							br

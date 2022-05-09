@@ -1,0 +1,85 @@
+.report-builder {
+	min-height: 65vh;
+	max-height: 65vh;
+	overflow: scroll;
+	margin: 0;
+	border: 0;
+}
+
+.grid-area {
+	margin: auto;
+	vertical-align: middle;
+	width: 8in;
+	height: 11in;
+	background-color: white;
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Lightblue_empty_grid.svg');
+	background-repeat: repeat;
+	background-size: 1600px 1000px;
+
+	position: relative;
+}
+#previewModal .grid-area {
+	margin: auto;
+	vertical-align: middle;
+	width: 8in;
+	height: 11in;
+	background-color: white;
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Lightblue_empty_grid.svg');
+	background-repeat: repeat;
+	background-size: 1600px 1000px;
+
+	position: relative;
+}
+.grid-area .panel {
+	height: 100%;
+}
+
+.draggable {
+	border-radius: 4px;
+
+	min-height: 40px;
+	min-width: 60px;
+	height: auto;
+/*	max-height: 300px;
+	max-width: 400px;*/
+
+	position: absolute;
+}
+
+.draggable .panel-body {
+	overflow: auto;
+	max-height: 260px;
+}
+
+.grid-area .panel-heading {
+	min-height: 40px;
+	max-height: 40px;
+}
+
+.draggable-content {
+	text-align: center;
+	height: 100%;
+}
+
+/*
+#draggable1 {
+	background-color: red;
+	color: white;
+}
+
+#draggable2 {
+	background-color: blue;
+	color: white;
+}
+
+#draggable3 {
+	background-color: yellow;
+}
+*/
+#zoom-slider {
+	max-width: 20vw;
+}
+
+.table {
+	color: black;
+}

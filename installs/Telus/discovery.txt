@@ -1,0 +1,25 @@
+needed info:
+- IBM EMM install directory
+- IBM EMM platform database connection info (db type, sid/dbname, host, port, username, password)
+- IBM EMM campaign database connection info
+- websphere/weblogic
+- cognos install location, url
+- iis/apache install location, url
+- LDAP login information: url, port, dn, password, base_dn
+- what url & open port for the node.js app?
+- what public url are the webpages be hosted at? (not necessary but for security yes)
+
+TELUS
+- Campaign: 142.168.84.223 /apps/campaign
+- PlatformDB: SID: CMTPR.WORLD ?url:41521? PLATFORMADM schema, PLATFORM_APP/pplatform
+- CampaignDB: SID: CMTPR.WORLD ?url:41521? CAMPAIGNADM schema, CAMPAIGN_APP/pcampaign
+- weblogic: /work/users/infra/wls http://btlp000804.corp.ads:50001/unica
+- Cognos: 142.168.84.224 /apps/campaign/cognos10/bin64 http://btlp000806.corp.ads:50000/ibmcognos
+- Apache: 142.168.84/224 /apps/infra/apache
+- LDAP server: none
+- what url & open port for the node.js app? http://btlp000805.corp.ads:3333
+- what public url are the webpages be hosted at? *:5000
+- does not allow npm install connections.
+
+libjvm.so
+libstdc++.so.6 (version GLIBCXX_3.4.9)

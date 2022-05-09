@@ -1,0 +1,45 @@
+{
+  "name": "ibm-emm",
+  "version": "1.3.0",
+  "description": "Provies nodejs api for IBM EMM utilities, or standalone REST API routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 15000 -b",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "IBM",
+    "IBM EMM",
+    "marketing",
+    "api"
+  ],
+  "author": "Ganna Shmatova <ganna.shmatova@cleargoals.com>",
+  "private": true,
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "async": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "browse_fs": "file:../modules/browse_fs",
+    "edge": "^5.0.0",
+    "env-vars": "file:../modules/env-vars",
+    "errors": "file:../modules/errors",
+    "express": "^4.13.4",
+    "find": "^0.2.4",
+    "fix-path": "file:../modules/fix-path",
+    "flat": "^2.0.0",
+    "jdbc-generic": "file:../modules/jdbc-generic",
+    "manage-application": "file:../manage-application",
+    "master-slave": "file:../modules/master-slave",
+    "pg-escape": "^0.2.0",
+    "smart-config": "file:../modules/smart-config",
+    "smart-tracer": "file:../modules/smart-tracer",
+    "system_info_monitoring": "file:../modules/system_info_monitoring",
+    "underscore": "^1.8.3",
+    "xml-to-json": "^0.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "rimraf": "^2.5.2",
+    "supertest": "^1.2.0"
+  }
+}

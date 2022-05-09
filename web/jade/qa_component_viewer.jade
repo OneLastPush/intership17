@@ -1,0 +1,33 @@
+//-
+	@version 1.1.0 - April 20th, 2017
+	@author Jacob Brooker
+
+.panel.panel-default.sideMargins#component-viewer
+	.panel-heading
+		span
+			|	#{loc.qa_component_details.componentViewerTitle}
+	.panel-body
+		#cv-search-box
+			form
+				.input-group
+					input(type='text', tabindex='1' placeholder='#{loc.qa_component_details.searchComponentPlaceholder}')#cv-search-component-input.form-control
+					span(role='button', tabindex='2')#cv-search-component-btn.btn.input-group-addon
+						|	#{loc.qa_component_details.searchComponent}
+		hr
+		#cv-category-list-box(style='height:28vh', overflow='auto', hidden).pre-scrollable
+				ul#cv-category-list.list-unstyled
+		#cv-category-list-box-cover(style='text-align:center')
+			span.glyphicon.glyphicon-refresh.animate-spin
+		hr
+		#cv-add-category-box
+			form
+				.input-group
+					input(type='text', tabindex='3', placeholder='#{loc.qa_component_details.categoryName}', autocomplete='off')#cv-add-category-input.form-control
+					span(role='button', tabindex='4')#cv-add-category-btn.btn.input-group-addon
+						|	#{loc.qa_component_details.addCategory}
+		button(tabindex='5')#cv-new-component-btn.btn.btn-block.btn-sm.btn-default
+			|	#{loc.qa_component_details.newComponent}
+		button#cv-delete-component-btn.btn.btn-block.btn-sm.btn-danger
+			|	#{loc.qa_component_details.deleteComponent}
+		button#cv-delete-category-btn.btn.btn-block.btn-sm.btn-danger
+			|	#{loc.qa_component_details.deleteCategory}

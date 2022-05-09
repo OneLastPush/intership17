@@ -1,0 +1,88 @@
+//-
+	@version 2.0.0
+	@author Cristan D'Ambrosio (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/formHelpers.js')
+	script(src='js/campaign/partitions.js')
+	script(src='js/recompute.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+			span.glyphicon.glyphicon-repeat
+			span
+				|  #{loc.header.recompute}
+		.panel-body
+			p
+				span
+					|  #{loc.recompute.refreshedatabase}
+				br
+			form#recompute.center-block.col-xs-12.col-sm-12.col-md-11.col-lg-10.unfloat
+				.form-group.col-xs-12.col-sm-6
+					label(for="partition").col-xs-12
+						span
+							|  #{loc.log_viewer.partition}
+					select(name="partition")#partition.selectpicker.col-xs-12.no-padding.no-margin.form-control
+				.form-group.col-xs-12.col-sm-6
+					label(for="fileType").col-xs-12
+							span
+								|  #{loc.recompute.filetype}
+						select(name='fileType')#fileType.col-xs-12.selectpicker.no-padding.no-margin.form-control
+							option(value='acat').lang-allcatalogfiles
+							option.lang-filecatalog
+							option.lang-fileflowchart
+							option.lang-filesession
+				.form-group.col-xs-12
+					span#pathInput.hidden
+						label(for="file").col-xs-12
+							span
+								|  #{loc.recompute.file}
+
+						select(data-live-search="true" mobile="true" name="filePath")#file.col-xs-12.selectpicker.no-padding.no-margin
+
+				.form-group.col-xs-12.col-sm-12
+					label(for="countsType").col-xs-12
+						span
+							|  #{loc.header.recompute}
+					select(name='countsType')#countsType.col-xs-12.selectpicker.no-padding.no-margin
+						option(value='all').lang-recordvalues
+						option(value='counts').lang-recordcounts
+						option(value='distinct').lang-distinctvalues
+
+
+				.form-group.verticalMargins.col-xs-12
+						input(type='submit', class="langbutton-recomputetables", data-loading-text='Recomputing...').btn.btn-default.pull-right
+
+		.container.max-width-900.medium-padding
+			.row.verticalMargins
+				ul#logs.list-group
+
+			.row
+				#lastRecomputedAllDesc.col-xs-12
+					span
+						span
+							|  #{loc.recompute.lastrecomputed}
+						strong#lastRecomputeAllTime
+							span
+								|  #{loc.recompute.never}
+					span.medium-padding.pull-right.btn.btn-defaultt
+						span
+							|  #{loc.recompute.showlastlog}
+						span#chev.medium-margin.fa.fa-chevron-down
+
+			.progress
+				#recomputeProgress.progress-bar(role='progressbar' aria-valuemin='0' aria-valuemax='100')
+
+			.row.verticalMargins
+				#allMore.collapse.sideMargins
+					.well.well-sm#recomputeAllLog.pre-scrollable
+						span
+							|  #{loc.recompute.nodata}

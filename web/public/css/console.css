@@ -1,0 +1,23 @@
+#consoleContainer{
+	position:fixed !important;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	padding-top: 50px;
+	padding-bottom: 107px;
+}
+
+#consoleOutput {
+	height: 100%;
+
+	display: block;
+	font-family: monospace;
+	background: #14141F;
+	color: white;
+	word-wrap: break-word;
+	font-size: 13px;
+	line-height: 130%;
+}
+

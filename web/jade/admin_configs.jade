@@ -1,0 +1,47 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/TabPanes.js')
+
+	script(src='js/util/ConfigWizard.js')
+
+	link(rel='stylesheet', href='js/KeyValueTable/KeyValueTable.css')
+	script(src='js/KeyValueTable/KeyValueTable.js')
+
+	script(src='js/miscLibs/underscore-min.js')
+	script(src='js/util/JSONBrowser.js')
+
+	script(src='js/util/Progress.js')
+	script(src='js/util/Refresher.js')
+	script(src='js/util/RawFileViewer.js')
+
+	script(src='js/admin_configs.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+			span.fa.fa-cog
+			span
+				|   #{loc.header.configuration}
+
+		.panel-body
+			.row
+				div.panel-body
+					select.selectpicker#viewType
+						option=loc.admin_configs.components
+						option=loc.admin_configs.swlicensessupport
+						option=loc.admin_configs.installationlogs
+			#settings.col-xs-12.unfloat.center-block.max-width-1300
+				#installLogs.hidden
+					.form-group
+						select#product.selectpicker.col-xs-6
+						select#file.selectpicker.col-xs-6

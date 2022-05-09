@@ -1,0 +1,24 @@
+{
+  "name": "smart-config",
+  "version": "3.0.0",
+  "description": "Configuration module that managed a .json file that could be accessed seamlessly, saved, and refreshed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b"
+  },
+  "keywords": [
+    "conf",
+    "config",
+    "configuration",
+    "key",
+    "value",
+    "storejson",
+    "smart",
+    "lazy"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
+}

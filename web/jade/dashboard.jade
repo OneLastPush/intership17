@@ -1,0 +1,166 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/Refresher.js')
+
+	link(rel='stylesheet', href='js/jquery/dataTables/dataTables.bootstrap.css')
+	link(rel='stylesheet', href='js/jquery/dataTables/dataTables.responsive.css')
+	script(src='js/jquery/dataTables/jquery.dataTables.min.js')
+	script(src='js/jquery/dataTables/dataTables.bootstrap.js')
+	script(src='js/jquery/dataTables/dataTables.responsive.js')
+
+	script(src='js/util/conversions.js')
+	script(src='js/util/cookieSaves.js')
+
+	script(src='js/campaign/inboundTrigger.js')
+	script(src='js/campaign/actions.js')
+	script(src='js/campaign/contextMenu.js')
+	script(src='js/campaign/manager.js')
+	script(src='js/session_manager.js')
+
+	script(src='js/chartjs/Chart.js')
+	script(src='js/servers.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+			span.fa.fa-tachometer
+			span
+				|  #{loc.header.dashboard}
+		.panel-body
+
+			.row
+			#sessionManager.panel.panel-default
+
+				.panel-heading
+					span.fa.fa-tasks
+					span
+						|  #{loc.dashboard.sessionManager}
+					.btn-group.pull-right
+						button.btn.btn-default#refreshNow
+							span.fa.fa-refresh
+						.btn-group
+							button(data-toggle='dropdown').dropdown-toggle.btn.btn-default.settingsBtn
+								span.fa.fa-cogs
+							ul.settings.dropdown-menu.text-black.medium-padding.width-220.dropdown-menu-right
+								li
+									label(for='refreshRate')=loc.dashboard.refreshRate
+									span.medium-padding
+										input(type='number', max='99', min='1', value="").no-padding#refreshRate
+									label(for='refreshRate')=loc.dashboard.seconds
+
+				.panel-body
+					ul.nav.nav-tabs
+						li.active
+							a(href='#manageFlowcharts', data-toggle='tab')=loc.dashboard.sessions
+						li
+							a(href='#manageUsers', data-toggle='tab')=loc.dashboard.users
+
+					.tab-content
+						br
+						div#manageFlowcharts.tab-pane.fade.in.active
+						div#manageUsers.tab-pane.fade.in
+
+
+
+			.row
+			#servers.panel.panel-default.hidden
+				.panel-heading
+					span.fa.fa-desktop
+					span
+						|  #{loc.dashboard.servers}
+					.btn-group.pull-right
+						button.btn.btn-default#refreshNow
+							span.fa.fa-refresh
+						.btn-group
+							button(data-toggle='dropdown').btn.btn-default.dropdown-toggle.settingsBtn
+								span.fa.fa-cogs
+							ul.settings.dropdown-menu.text-black.medium-padding.width-320.dropdown-menu-right
+								li
+									label(for='refreshRateUptime')=loc.dashboard.uptimeRefreshRate
+									span.medium-padding
+										input(type='number', max='99', min='1', value='').no-padding#refreshRateUptime
+									label(for='refreshRateUptime')=loc.dashboard.seconds
+
+								li
+									label(for='refreshRateCPU')=loc.dashboard.cpuRefreshRate
+									span.medium-padding
+										input(type='number', max='99', min='1', value='').no-padding#refreshRateCPU
+									label(for='refreshRateCPU')=loc.dashboard.seconds
+
+								li
+									label(for='refreshRateRAM')=loc.dashboard.ramRefreshRate
+									span.medium-padding
+										input(type='number', max='99', min='1', value='').no-padding#refreshRateRAM
+									label(for='refreshRateRAM')=loc.dashboard.seconds
+
+								li
+									label(for='refreshRateSwap')=loc.dashboard.swapRefreshRate
+									span.medium-padding
+										input(type='number', max='99', min='1', value='').no-padding#refreshRateSwap
+									label(for='refreshRateSwap')=loc.dashboard.seconds
+
+				.top-margin.overflow
+					ul#serverList.nav.nav-tabs(role="tablist").scrollable-tabs.fillWidth
+
+				.panel-body
+					.tab-content
+						#server.tab-pane.fade.in.active
+							h3
+								span
+									span#host
+
+							div#infoRow.row
+								div.col-xs-12.col-sm-6
+									small#url
+								div.col-xs-12.col-sm-6
+									small#uptime.pull-right
+							div#serverParent.col-xs-12
+								#leftServerPane.col-xs-12.col-lg-6.flexCol
+									.row
+										.col-sm-4.col-xs-12.text-right
+											h4.text-left=loc.dashboard.os
+											.row
+												#os.col-xs-12
+													.row
+														label.pull-left=loc.dashboard.type
+														span#type.small
+													.row
+														label.pull-left=loc.dashboard.platform
+														span#platform.small
+													.row
+														label.pull-left=loc.dashboard.release
+														span#release.small
+													.row
+														label.pull-left=loc.dashboard.archtype
+														span#arch.small
+										.col-sm-8.col-xs-12.text-right
+											h4.text-left=loc.dashboard.nics
+											.row
+											#nic
+									.row
+										.col-xs-12.col-sm-4.no-padding.well
+											h4.text-center=loc.dashboard.ram
+											#ram
+										.col-xs-12.col-sm-4.no-padding.well
+											h4.text-center=loc.dashboard.swap
+											#swap
+										.col-xs-12.col-sm-4.well.no-padding
+											#singleDisk
+								#rightServerPane.col-xs-12.col-lg-6.flexCol
+									b
+										| #{loc.dashboard.cpu}: 
+									span#cpuName
+									.panel
+										#cpus
+
+

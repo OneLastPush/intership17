@@ -1,0 +1,40 @@
+{
+  "name": "system_info_monitoring",
+  "version": "1.0.0",
+  "description": "application for monitoring machine and OS",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cleargoals/AdminExtension/tree/master/app/modules/system_info_monitoring"
+  },
+  "keywords": [
+    "os",
+    "oeprating",
+    "system",
+    "statistics",
+    "monitoring",
+    "information",
+    "standalone",
+    "express"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "dependencies": {
+    "bytes": "^2.1.0",
+    "diskspace": "^0.1.7",
+    "duration": "^0.2.0",
+    "express": "^4.12.4",
+    "smart-tracer": "file:../smart-tracer"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "supertest": "^1.0.1"
+  }
+}

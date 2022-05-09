@@ -1,0 +1,67 @@
+.cg-modal-body {
+	width : auto;
+}
+.cg-select{
+	min-height:50vh;
+}
+.cg-modal-body .form-group {
+	min-height : 50vh;
+	height : auto;
+}
+
+@media screen and (min-width: 770px){
+	.cg-first-btn{
+		margin-top: 7em;
+	}
+	.cg-other-btn{
+		margin-top:  2.5em;
+	}
+	#moveUpLeft, #moveUpRight{
+	  margin-top: 10em;
+	}
+	#moveDownLeft, #moveDownRight{
+	  margin-top:  5em;
+	}
+	.cg-modal-body li , .cg-modal-body option{
+		margin:0.1em;
+		font-size: 18px;
+		text-align: left;
+	   background-color: #fff;
+	    border: 1px solid #ddd;
+	    border-top-right-radius: 4px;
+	    border-top-left-radius: 4px;
+	    display: block;
+	    padding: 10px 15px;
+	    margin-bottom: -1px;
+	     cursor: pointer; 
+
+	}
+}
+.cg-modal-body li:hover,option:hover {
+    background-color: rgb(0, 185, 255);
+}
+#origGroupList .ui-selecting{
+  background-color: rgb(0, 85, 255);
+}
+.cg-modal-body .ui-selected{
+    background-color: rgb(20, 240, 255);
+}
+@media screen and (max-width: 770px){
+	.cg-first-btn{
+		margin-top: 5em;
+	}
+	.cg-second-btn{
+		margin-top: 1em;
+	}
+	option{
+		margin:0.1em;
+		font-size: 16px;
+		text-align: left;
+	}
+}
+#origGroupList, #modifiedGroupList {
+overflow: auto
+}
+.greenBorder{
+	border:solid 2px green;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "ldap-login",
+  "version": "1.0.0",
+  "description": "Login module for ldap protocol, meant to be plugged into login-engine module",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "login",
+    "ldap",
+    "engine"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "dependencies": {
+    "ldapjs": "^0.7.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  }
+}

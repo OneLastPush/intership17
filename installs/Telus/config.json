@@ -1,0 +1,167 @@
+{
+	"Node": {
+		"*port": "3333",
+		"allowed_origins": "*",
+		"*session_password": "b13f4891001f5d5a1f228ff146888476e6eb",
+		"*salt_password": "a0254c980f1c4a481f1590f3",
+		"debug_mode": true,
+		"public_folder": "/public",
+		"exports_folder": "/exports",
+		"imports_folder": "/imports",
+		"archive_path": ""
+	},
+	"Global Bookmarks List": {
+		"IBM": "http://btlp000806.corp.ads:50000/ibmcognos/cgi-bin/cognos.cgi",
+		"Campaign": "http://btlp000805.corp.ads/unica/jsp/frameworklogin.jsp",
+		"Cognos": "http://btlp000806.corp.ads:50000/ibmcognos",
+		"CLEARGOALS": "http://www.cleargoals.com/"
+	},
+	"Watched Servers List": {
+		"Local": "http://localhost:3334"
+	},
+	"FTPS settings" : {
+		"active" : false,
+		"hostname" : "",
+		"port" : "",
+		"username" : "",
+		"password" : ""
+	},
+	"SFTP settings" : {
+		"active" : false,
+		"hostname" : "",
+		"port" : "",
+		"username" : "",
+		"password" : ""
+	},
+	"Split and archiving paths" : {
+		"split_to" : "",
+		"archive_to" : ""
+	},
+	"User Interface" : {
+		"flowchart_treshold_min" : "30",
+		"flowchart_treshold_day" : "0",
+		"RAM Usage Threshold (%)" : "10",
+		"Swap Usage Threshold (%)" : "10",
+		"Disk Usage Threshold (%)" : "10"
+	},
+	"Auditing": {
+		"active": false,
+		"result_details_max_char": "100",
+		"*max_records": "5000",
+		"*max_kb_size": "256"
+	},
+	"SSL": {
+		"active": true,
+		"*SSL_password": "a6325a8b"
+	},
+	"Email Client": {
+		"active": true,
+		"service": "gmail",
+		"address": "system.alerts@cleargoals.com",
+		"password": "a739409c0650090d1b18c6a6",
+		"display_name": "CLEARGOALS System Alerts"
+	},
+	"LDAP Configuration": {
+		"active": false,
+		"url": "",
+		"port": "",
+		"credentials_dn": "",
+		"credentials_password": "",
+		"base_dn": "",
+		"filter": "(&(|(objectClass=posixAccount)(objectClass=person))(uid={0}))",
+		"scope": "sub"
+	},
+	"IBM Marketing Platform": {
+		"active": true,
+		"system_path": "/apps/campaign/Platform"
+	},
+	"Platform Database Access": {
+		"active": true,
+		"*JDBC_driver_path": "ojdbc6.jar",
+		"sid_or_db_name": "CMTPR.WORLD",
+		"hostname": "CMTPR-scan.corp.ads",
+		"port": "41521",
+		"username": "PLATFORM_APP",
+		"password": "91101aca504f080f4b",
+		"default_schema": "PLATFORMADM",
+		"use_override_url": false,
+		"override_url": "jdbc:oracle:thin:T10PLATFORM/abcabc@10.0.2.226:1521:ORCL"
+	},
+	"IBM Campaign": {
+		"active": true,
+		"start": "net start unica_aclsnr",
+		"system_path": "/apps/campaign/Campaign",
+		"default_partition": "partition1",
+		"log_files": "/logs/",
+		"watch_campaign_folder": true,
+		"watch_partitions_folders": true,
+		"watched_partitions_sub_folders": "campaigns, sessions, tmp"
+	},
+	"Campaign Database Access": {
+		"active": true,
+		"*JDBC_driver_path": "ojdbc6.jar",
+		"sid_or_db_name": "CMTPR.WORLD",
+		"hostname": "CMTPR-scan.corp.ads",
+		"port": "41521",
+		"username": "CAMPAIGN_APP",
+		"password": "91101aca504f080f4b",
+		"default_schema": "CAMPAIGNADM",
+		"use_override_url": false,
+		"override_url": "jdbc:oracle:thin:T10PLATFORM/abcabc@10.0.2.226:1521:ORCL"
+	},
+	"IBM Contact Optimization": {
+		"active": false,
+		"system_path": "",
+		"start": ""
+	},
+	"IBM Distributed Marketing": {
+		"active": false,
+		"system_path": ""
+	},
+	"IBM Interact": {
+		"active": false,
+		"system_path": ""
+	},
+	"IBM Marketing Operations": {
+		"active": false,
+		"system_path": ""
+	},
+	"IBM SPSS Modeler Advantage": {
+		"active": false,
+		"system_path": ""
+	},
+	"IBM Cognos": {
+		"active": false,
+		"start": "net start \\\"IBM Cogno\\\"",
+		"stop": "net stop \\\"IBM Cognos\\\"h",
+		"url": "http://btlp000806.corp.ads:50000/ibmcognos/cgi-bin/cognos.cgi",
+		"version_file": "/cognos10/cmplst.txt",
+		"log_files": "/cognos10/logs/"
+	},
+	"Apache": {
+		"active": false,
+		"log_files": ""
+	},
+	"Microsoft IIS": {
+		"active": false,
+		"log_files": ""
+	},
+	"IBM WebSphere": {
+		"active": false,
+		"start": "net stop \"IBMWAS85Service - TARGET11Node01\"",
+		"stop": "net stop \"IBMWAS85Service - TARGET11Node01\"",
+		"url": "http://target11.cleargoals.com:9080/unica/jsp/frameworklogin.jsp",
+		"version_file": "/WebSphere/AppServer/properties/version/WebSphere_Application_Server_-_Base_v8.5.5_Fix_Pack.fxtag",
+		"log_files": "/WebSphere/AppServer/profiles/AppSrv01/logs/server1/",
+		"install_logs": "/WebSphere/AppServer/logs/postinstalll"
+	},
+	"Oracle WebLogic": {
+		"active": false,
+		"start": "",
+		"stop": "",
+		"url": "http://btlp000804.corp.ads:50001/unica",
+		"version_file": "",
+		"log_files": "",
+		"install_logs": ""
+	}
+}

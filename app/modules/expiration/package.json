@@ -1,0 +1,20 @@
+{
+  "name": "expiration",
+  "version": "1.0.0",
+  "description": "Licensing and expiration module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo none"
+  },
+  "keywords": [
+    "license",
+    "expire",
+    "trial",
+    "key"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.10.3"
+  }
+}

@@ -1,0 +1,33 @@
+.xmltree { font-family: 'Trebuchet MS'; font-size: 15px; }
+.xmltree ul { display: none; }
+.xmltree ul, .xmltree.xmltree li { list-style: none; }
+.xmltree.startExpanded ul { display: block; }
+
+.xmltree ul { margin: 0; padding: 10px 0 0 0; border: none; margin-left: 15px; border-left: solid 1px rgb(151, 171, 205); }
+
+.xmltree li {padding: 0 0 0 12px; display: block; position: relative; margin-bottom: 10px; border: none; }
+
+.xmltree .attr { margin: -3px 0 7px 0; }
+.xmltree a:hover { color: rgba(0, 0, 0, 0.5); }  /* for links? */
+
+.xmltree .LIText, .xmltree .noKids .LIText:hover, .xmltree .currSel li .LIText { color: #333; }
+/* used where?? */
+
+.xmltree .tree_node { margin: 2px; margin-right: 8px; padding: 2px 3px; border-radius: 3px; color: white; font-weight: bold; background: rgb(151, 171, 205);)}
+/* tree node thing */
+
+.xmltree .attr span { color: rgba(48,89,157, 0.8); }
+.xmltree .attrValue { margin-left: 8px; }
+/* attributes */
+
+.xmltree .tree_node, .xmltree .attr span, .xmltree .LIText { display: inline !important; }
+.xmltree.hideAttrs .attr, .xmltree.hideNodeNames .tree_node { display: none !important; }
+
+.xmltree .currSel .LIText { color: #d00; text-decoration: none !important; } 
+/* whats this...? */
+
+.xmltree .plusMin { position: absolute; width: 11px; height: 11px; top: 2px; left: -7px; background: rgb(151, 171, 205); border: solid 1px rgb(151, 171, 215); color: white; font-weight: bold; font-size: 15px; text-align: center; line-height: 9px; cursor: pointer; }
+.xmltree .plusMin:hover { background: rgb(160, 180, 255);}
+
+.xmltree .noKids .plusMin { display: none; }
+.xmltree.subTreeRequestsOnAllNodes .plusMin, .xmltree .subTreeNode .plusMin { display: block; }

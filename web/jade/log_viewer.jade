@@ -1,0 +1,89 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/formHelpers.js')
+	script(src='js/campaign/partitions.js')
+
+	link(rel='stylesheet' href='js/jquery/jquery-ui/jquery-ui.min.css')
+	script(src='js/jquery/jquery-ui/jquery-ui.min.js')
+
+	script(src='js/util/Searchable.js')
+
+	script(src='js/util/LogBrowser.js')
+
+	script(src='js/util/Progress.js')
+
+	script(src='js/util/RawFileViewer.js')
+	script(src='js/util/Refresher.js')
+
+	script(src='js/jquery/timeline/dist/timeline.min.js')
+	link(rel='stylesheet' href='js/jquery/timeline/dist/timeline.min.css')
+	script(src='js/jquery/timeline/l10n/en/labellers.js')
+	script(src='js/jquery/timeline/l10n/en/timeline.js')
+	script(src='js/util/LogAnalyzer.js')
+
+	script(src='js/log_viewer.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.glyphicon.glyphicon-eye-open
+				span
+					|  #{loc.header.logViewer}
+		.panel-body
+			.center-block.col-xs-12.unfloat.center-block.max-width-1200
+				form#logSelect.col-xs-12
+					.col-lg-4.col-md-12
+						.row.verticalMargins
+							.center-block.max-width-600
+								label(for="logType").col-xs-4
+									span
+										|  #{loc[page].logType}
+								select(name="logType")#logType.selectpicker.col-xs-8.no-padding.no-margin
+						.row.verticalMargins
+							.center-block.max-width-600#partitionHide
+								label(for="partition").col-xs-4
+									span
+										|  #{loc[page].partition}
+								select(name="partition")#partition.selectpicker.col-xs-8.no-padding.no-margin
+
+					.col-lg-8.col-md-12
+						.row.verticalMargins
+							.center-block
+								#file
+
+				.row
+				#viewer.verticalMargins
+					.row.verticalMargins
+						ul.nav.nav-tabs
+							li.active
+								a(href='#raw' data-toggle='tab')#rawTab
+									span
+										|  #{loc[page].rawFile}
+							li
+								a(href='#analyze' data-toggle='tab')#analyzeTab
+									span
+										|  #{loc[page].analyze}
+							li
+								a(href='#timeline' data-toggle='tab')#browseTab
+									span
+										|  #{loc[page].browse}
+
+					.row.verticalMargins
+					h3.page-header
+						| #{loc[page].noFileSelected}
+					.tab-content.hidden
+						#timeline.tab-pane.fade
+							#progress
+							#content
+						#raw.tab-pane.fade.in.active
+						#analyze.tab-pane.fade

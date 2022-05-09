@@ -1,0 +1,42 @@
+//-
+	@version 2.0.0
+	@author Cristan D'Ambrosio (2014)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet', href='css/console.css')
+	script(src='js/console.js')
+
+
+block content
+	br
+	br
+	#consoleContainer
+		pre#consoleOutput
+
+	.navbar-fixed-bottom
+		.container-fluid.col-xs-12.no-padding
+			.panel.panel-default.no-margin.no-padding
+				form#consoleForm(autocomplete="off").panel-body
+
+					.row
+					p.input-group
+						span.input-group-addon.lang-command
+						input#txtCommand.form-control(type='text', class="langplaceholder-pressingarrow", name='command', autocomplete="off", placeHolder='Pressing the up or down arrow keys will cycle through previously used commands')
+
+					.row
+						.col-xs-12
+
+							.btn-group
+								span#btnClear.btn.btn-default
+									span
+										|  #{loc.console.clearconsole}
+								span#btnHelp.btn.btn-default
+									span
+										|  #{loc.console.help}
+							.btn-group.pull-right
+								span#btnClear.btn.btn-default
+									span#upBtn.glyphicon.glyphicon-arrow-up
+								span#btnHelp.btn.btn-default
+									span#downBtn.glyphicon.glyphicon-arrow-down

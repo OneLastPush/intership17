@@ -1,0 +1,76 @@
+//-
+	@version 1.0.0
+	@author Erika Bourque (2017)
+	@author Jacob Brooker (2017)
+	@author Frank Birikundavyi (2017)
+	@author Jeegna Patel (2017)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet', href='js/jquery/jquery-ui/jquery-ui.min.css')
+	script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
+	script(src='js/bootstrap/bootstrap.js')
+
+	//- Local stylesheets
+	link(rel='stylesheet', href='css/animation.css')
+	link(rel='stylesheet', href='css/qa_component_viewer.css')
+	link(rel='stylesheet', href='css/autocomplete.css')
+	link(rel='stylesheet', href='css/jquery.growl.css')
+	link(rel='stylesheet', href='css/qa_report_builder_grid.css')
+
+	//- Local scripts
+	//- script(src='js/qa_selector_area.js')
+	//- script(src='js/qa_component_viewer.js')
+	//- script(src='js/qa_component_viewer_util.js')
+	//- script(src='js/qa_component_details.js')
+	//- script(src='js/growl/jquery.growl.js')
+	script(src='js/jeegna_test.js')
+
+block content
+	br
+	br
+	br
+	br
+
+	//- Component viewer/selector
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-ticket
+			span
+				|  Reports Builder
+		.panel-body
+			.col-md-4
+				//- include qa_component_viewer
+
+			//- Component creator/editor
+			.col-md-8
+				.zoom.row
+					.col-sm-3
+						#zoom-slider
+					.col-sm-2
+						.form-group
+							input#zoom-input(type='number').form-control
+					.col-sm-1
+						button#btn-zoom-reset.btn.btn-s.btn-default
+							| Reset Zoom
+					.col-sm-1
+						button#btn-run.btn.btn-s.btn-default
+							| Run
+				.well.report-builder.row
+					.grid-area#grid
+						#draggable1.draggable(data-id='0')
+							.panel.panel-default.draggable-content
+								.panel-heading
+									| Hello, I'm yellow
+								.panel-body
+						#draggable2.draggable(data-id='1')
+							.panel.panel-default.draggable-content
+								.panel-heading
+									| Not age
+								.panel-body
+						#draggable3.draggable(data-id='2')
+							.panel.panel-default.draggable-content
+								.panel-heading
+									| Another table
+								.panel-body

@@ -1,0 +1,74 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/Progress.js')
+	script(src='js/ServerCmds/campaign.js')
+	script(src='js/ServerCmds/cognos.js')
+	script(src='js/ServerCmds/web_app.js')
+	script(src='js/ServerCmds/Server.js')
+	script(src='js/ServerCmds/main.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-power-off
+				span
+					|  #{loc.header.startStop}
+			.panel-body.center-block.max-width-1200
+				.col-xs-12.col-sm-6#environmentSection.hidden
+					h3.page-header.medium-margin
+						span
+							|  #{loc.start_stop.environment}
+
+					#envBtns.col-xs-offset-2.col-xs-8.verticalMargins
+						.row.verticalMargins
+							#envBounce.btn.btn-default.col-xs-12.disabled
+								span
+									|  #{loc.start_stop.restartenvironment}
+						.row.verticalMargins
+							#envStop.btn.btn-default.col-xs-12.disabled
+								span
+									|  #{loc.start_stop.stopenvironment}
+						.row.verticalMargins
+							#envStart.btn.btn-default.col-xs-12.disabled
+								span
+									|  #{loc.start_stop.startenvironment}
+
+				#listeners
+					//- .col-xs-12.col-sm-6
+					//- 	h3.page-header.large-margin
+					//- 		| Campaign Listener
+					//- 	form.col-xs-offset-1.col-xs-10
+					//- 		.row
+					//- 			input(type='text', name='servername', placeHolder='Host name').col-xs-8.small-margin.small-padding
+					//- 			input(type='text', name='port', placeHolder='Port').col-xs-3.small-margin.small-padding
+					//- 		.row
+					//- 			.col-xs-12
+					//- 				input(type="checkbox", name="ssl")#ssl
+					//- 				label(for="ssl").left-padding.checkbox-inline
+					//- 					| SSL connection
+					//- 	h3.col-xs-12
+					//- 		.col-xs-6.text-center
+					//- 			span.fa.fa-dot-circle-o.darken-color
+					//- 		.col-xs-6
+					//- 			.btn.btn-default.col-xs-9
+					//- 				| Ping
+					//- 	.col-xs-12
+					//- 		.row.verticalMargins
+					//- 			.btn.btn-default.col-xs-offset-2.col-xs-8
+					//- 				| Restart
+					//- 		.row.verticalMargins
+					//- 			.btn.btn-default.col-xs-offset-2.col-xs-8
+					//- 				| Shut down
+					//- 		.row.verticalMargins
+					//- 			.btn.btn-default.col-xs-offset-2.col-xs-8
+					//- 				| Start

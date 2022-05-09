@@ -1,0 +1,715 @@
+/******************************************************************************
+ * The following CSS is responsible for ensuring a 'sticky footer' which may be
+ * dynamically pushed down when content overflows by using "Ryan Fait's" method.
+ ******************************************************************************/
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+/* firefox blurry imgs fix */
+img {
+  image-rendering: optimizeQuality;
+  -ms-interpolation-mode:bicubic;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -52px;
+}
+
+
+#push {
+	height: 50px;
+}
+
+#footer {
+	height: 50px;
+}
+
+/**
+ * .navbar overwrites the default 'margin-bottom: 20px;' to ensure
+ * that the footer is at the very bottom of the page
+ **/
+
+#footer div.navbar {
+	margin-bottom: 0;
+}
+
+/******************************************************************************
+ * End of 'sticky footer' code
+ ******************************************************************************/
+
+#admin {
+	float: left;
+	margin-left: 5px;
+	font-size: 25px;
+}
+
+/**
+ * The #logo div is intended to take a 300px by 300px image and downscale it; this
+ * allows us to display a much higher quality logo on high-DPI computer displays.
+ **/
+
+#logo {
+  background-image: url('../img/cleargoals_logo_88.png');
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-top: -12px;
+    float: left;
+}
+
+#mini_logo {
+	background-image: url('../img/cleargoals_logo_44.png');
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+#big_logo {
+    background-image: url('../img/cleargoals_logo.png');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-top: -12px;
+    float: left;
+}
+
+/**
+ * The .btn-green class defines the visual and functional behaviour of a
+ * darker green button.
+ **/
+
+.btn-green {
+  background-color: #17733B;
+  border-color: #17733B;
+}
+.btn-green:hover,
+.btn-green:focus,
+.btn-green:active,
+.btn-green.active {
+  background-color: #135e30;
+  border-color: #0f4925;
+}
+.btn-green.disabled:hover,
+.btn-green.disabled:focus,
+.btn-green.disabled:active,
+.btn-greendisabled.active,
+.btn-green[disabled]:hover,
+.btn-green[disabled]:focus,
+.btn-green[disabled]:active,
+.btn-green[disabled].active,
+fieldset[disabled] .btn-green:hover,
+fieldset[disabled] .btn-green:focus,
+fieldset[disabled] .btn-green:active,
+fieldset[disabled] .btn-green.active {
+  background-color: #17733B;
+  border-color: #17733B;
+}
+
+.btn-blue {
+  background-color: #30479D;
+  border-color: #30479D;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active {
+  background-color: #2a3e89;
+  border-color: #243576;
+}
+.btn-blue.disabled:hover,
+.btn-blue.disabled:focus,
+.btn-blue.disabled:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled]:hover,
+.btn-blue[disabled]:focus,
+.btn-blue[disabled]:active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue:hover,
+fieldset[disabled] .btn-blue:focus,
+fieldset[disabled] .btn-blue:active,
+fieldset[disabled] .btn-blue.active {
+  background-color: #30479D;
+  border-color: #30479D;
+}
+
+.table th {
+   text-align: center;
+}
+
+.btn-group > .btn {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-bottom: -1px;
+}
+
+.sticky {
+	position: fixed;
+	width: 100%;
+	top: 51px;
+	left: 15px;
+	right: 15px;
+	z-index: 100;
+	border-top: 0;
+}
+
+.sticky2 {
+	position: fixed;
+	top: 84px;
+	z-index: 100;
+}
+
+tr {
+  cursor: default;
+}
+
+.borderless{
+  border: 0px;
+}
+
+/* colors */
+
+.stripe-children > *:nth-child(odd){
+  background-color: #f9f9f9;
+}
+
+.bg-gray{
+  background-color: #f9f9f9;
+}
+
+
+.fileColor { color: #963;}
+
+.blue { color: #30479D;}
+.orange{ color: rgb(235, 160, 15);}
+.green { color: rgb(50, 255, 50);}
+.red { color: rgb(255, 50, 50);}
+
+.dark-orange{ color: rgb(186, 125, 12);}
+.dark-green { color: rgb(0, 170, 72);}
+.dark-red { color: rgb(166, 0, 58);}
+
+.gray{ color: rgb(120, 120, 120);}
+.light-gray{ color: rgb(170, 170, 170) !important;}
+.lighter-gray{ color: rgb(220, 220, 220) !important;}
+
+.darken-color{ color: rgba(0, 0, 0, 0.5);}
+
+/** coloring elements **/
+
+.error-background{ background-color: rgba(200, 100, 100, 0.3) !important; }
+
+ /** margins **/
+
+.neg-margin{
+  margin: -7.5px;
+}
+
+.no-margin{ margin: 0px !important;}
+.no-vertical-margin{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.small-margin{ margin: 3px !important;}
+.medium-margin{ margin: 7px;}
+.large-margin{ margin: 15px;}
+
+.rightMargin { margin-right: 15px;}
+
+.bottom-margin{ margin-bottom: 15px;}
+.top-margin{ margin-top: 15px;}
+
+.sideMargins {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.verticalMargins {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/** paddings **/
+
+.no-padding{ padding: 0px;}
+.no-side-padding{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.small-padding{ padding: 3px !important;}
+.medium-padding{ padding: 7px !important;}
+.large-padding{ padding: 15px;}
+
+.left-padding{ padding-left: 4px;}
+
+.vertical-padding{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.vertical-padding-large{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.side-padding{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.side-padding-large{
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+/** widths **/
+.width-220{ width: 220px;}
+.width-320{ width: 320px;}
+
+.max-width-100{ max-width: 100px;}
+.max-width-200{ max-width: 200px;}
+.max-width-300{ max-width: 300px;}
+.max-width-400{ max-width: 400px;}
+.max-width-500{ max-width: 500px;}
+.max-width-600{ max-width: 600px;}
+.max-width-700{ max-width: 700px;}
+.max-width-800{ max-width: 800px;}
+.max-width-900{ max-width: 900px;}
+.max-width-1200{ max-width: 1200px;}
+.max-width-1300{ max-width: 1300px;}
+
+/** heights **/
+.max-height-100{ max-height: 100px;}
+.max-height-150{ max-height: 150px;}
+.max-height-200{ max-height: 200px;}
+.max-height-300{ max-height: 300px;}
+.max-height-400{ max-height: 400px;}
+.max-height-500{ max-height: 500px;}
+.max-height-600{ max-height: 600px;}
+
+.height-200{ height: 200px;}
+.height-300{ height: 300px;}
+.height-400{ height: 400px;}
+
+/** utils **/
+
+.debug{
+  background-color: red;
+}
+
+.clickable{
+  cursor: pointer;
+  cursor: hand;
+}
+
+.hover-highlight :hover{
+  color: rgb(150, 150, 150);
+}
+
+.insets{
+  border-color: #adadad;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}
+
+.light-insets{
+  border-color: #adadad;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0px 5px rgba(0,0,0,0.125);
+  box-shadow: inset 0 0px 5px rgba(0,0,0,0.125);
+}
+
+.highlight {
+  background: #87CEFA;
+}
+
+.embedded-circle{
+  display: inline-block;
+  border-radius: 50%;
+  border-color: #adadad;
+  -webkit-box-shadow: inset 0px 0px 15px rgba(0,0,0,0.18);
+  box-shadow: inset 0px 0px 15px rgba(0,0,0,0.18);
+}
+
+
+/** 'fixes' **/
+.panel-heading > .btn-group,
+.panel-heading > .pull-right{ /*fix btn groups not fitting in panel headers*/
+  margin: -7.5px;
+}
+
+.tooltip-inner  { /*fix tooltip tetx not wrapping right/cutting off as it wraps*/
+  white-space:pre; /* you can also try white-space: normal; */
+  max-width:none;
+}
+
+.text-left-imp{
+  text-align: left !important;
+}
+
+.divider{ /* duplicate .divider from bootstrap but doesnt need to be in .dropdown-menu */
+  height: 1px;
+  margin: 9px 0px;
+  overflow: hidden;
+  background-color: rgb(229, 229, 229);
+}
+
+.fillWidth{
+  width: 100%;
+}
+
+.fillHeight{
+  height: 100%;
+}
+
+.text-black{
+  color: black;
+}
+
+.label-black{
+  background-color: black;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+.relative{
+  position: relative;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.unfloat{
+  float: none !important;
+}
+
+.autoHeight{
+  height: auto;
+}
+
+#ui-datepicker-div{ /* fix datepicker going behind menu header */
+  z-index: 1031 !important;
+}
+
+input[type='text']{  /* AKA, unugly input with background color*/
+  border: 1px solid rgb(169, 169, 169);
+}
+
+.form-control{ /* selectpicker z index fix / behind form-control elements fix*/
+  z-index: auto !important;
+}
+
+/**
+* Transiiton off. (fats progress bars will use this)
+*/
+.no-transition{
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+
+/**
+ * Progress bars with centered text
+ */
+
+.progress {
+  position: relative;
+}
+
+.progress span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+/* scrollable tabs*/
+
+.scrollable-tabs{
+  display: inline-block;
+  display: -webkit-box;
+  display: -moz-box;
+}
+.scrollable-tabs li {
+  float: none;
+  display: inline-block;
+  display: -webkit-box;
+}
+
+
+/*** misc ***/
+
+.monospace{
+  font-family: monospace;
+}
+
+/**
+ * Remove the added scrollbar when a modal appears
+ */
+.modal {
+  overflow-y: inherit;
+}
+
+/**
+ * Remove unecessary scrollbar  in the list
+ * of accounts/groups in account management
+ */
+.list-group-item-fix{
+  padding: 9px 15px;
+  border-bottom: 2px solid #ddd;
+ }
+
+ #infoRow small {
+  font-size: 1.1em;
+  color: #888888;
+ }
+
+ #uptime {
+  padding-right: 15px;
+ }
+
+ #fileInfo p {word-wrap: break-word;}
+
+th, td {
+  word-wrap: break;
+ }
+
+ .noPadding {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+ }
+
+#server .well {
+  margin-left: -2px;
+  margin-right: -5px;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.chev {
+  margin-top: -15px !important;
+  font-size: 15px;
+}
+
+#sizeGroup {
+  padding-right: 0px !important;
+}
+
+.utilities-panel {
+  color: #333333 ;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  text-align: center;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+
+.fancytree-container {
+  overflow-y: scroll;
+  max-height: 470px;
+  overflow-x: scroll;
+}
+
+
+/*-----  Timeline Theme styling -----------*/
+/*----- taken from: http://www.simile-widgets.org/timeline/     ----*/
+
+.t-highlight1 { background-color: #ccf; }
+.p-highlight1 { background-color: #fcc; }
+
+.timeline-highlight-label-start .label_t-highlight1 { color: #f00; }
+.timeline-highlight-label-end .label_t-highlight1 { color: #aaf; }
+
+.timeline-band-events .important { color: #f00; }
+.timeline-band-events .small-important { background: #c00; }
+
+
+.dark-theme { color: #eee; }
+.dark-theme .timeline-band-0 .timeline-ether-bg { background-color: #333 }
+.dark-theme .timeline-band-1 .timeline-ether-bg { background-color: #111 }
+.dark-theme .timeline-band-2 .timeline-ether-bg { background-color: #222 }
+.dark-theme .timeline-band-3 .timeline-ether-bg { background-color: #444 }
+
+.dark-theme .t-highlight1 { background-color: #003; }
+.dark-theme .p-highlight1 { background-color: #300; }
+
+.dark-theme .timeline-highlight-label-start .label_t-highlight1 { color: #f00; }
+.dark-theme .timeline-highlight-label-end .label_t-highlight1 { color: #115; }
+
+.dark-theme .timeline-band-events .important { color: #c00; }
+.dark-theme .timeline-band-events .small-important { background: #c00; }
+
+.dark-theme .timeline-date-label-em { color: #fff; }
+.dark-theme .timeline-ether-lines { border-color: #555; border-style: solid; }
+.dark-theme .timeline-ether-highlight { background: #555; }
+
+.dark-theme .timeline-event-tape,
+.dark-theme .timeline-small-event-tape { background: #f60; }
+.dark-theme .timeline-ether-weekends { background: #111; }
+
+#cpuName{font-weight: bold;}
+
+
+/*---------End of timeline Theme------------*/
+
+
+#contextButtons .dropdown-menu > li > a{text-align: left;}
+
+.btn-dark {
+  background-color: #E4E4E4;
+}
+
+#sesTable {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+
+@media (min-width: 765px) {
+    #server h3 {padding-left:15px;padding-right: 15px;}
+    #infoRow {padding-left:15px;padding-right: 15px;}
+    .panel > .table#networkTable> tbody> tr td:first-child { width: 115px;}
+    #rightServerPane{margin-top:10px; }
+}
+/**
+  * Media query for the uptime small on the dashboard
+  */
+ @media (max-width: 765px) {
+    #server h3 {padding-left:10px;padding-right: 10px;}
+    #infoRow {padding-left:10px;padding-right: 10px;}
+    #uptime {
+        float: none !important;
+    }
+      .responsive-stacked-table {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .responsive-stacked-table thead {
+        display: none;
+      }
+      .responsive-stacked-table tr,
+      .responsive-stacked-table th,
+      .responsive-stacked-table td {
+        display: block;
+      }
+      .responsive-stacked-table td {
+        border-top: none;
+        text-align: left;
+      }
+      .responsive-stacked-table tr td:first-child {
+        border-top: 1px solid #ddd;
+      }
+      
+       .responsive-stacked-table tr td:first-child:before {
+        content: "Name:  ";
+        font-weight: bold;
+      }
+     
+     
+      .responsive-stacked-table td:nth-of-type(2):before {
+        content: "IPv4:  ";
+        font-weight: bold;
+      }
+      
+      .responsive-stacked-table td:nth-of-type(3):before {
+         content: "IPv6:  ";
+         font-weight: bold;
+      }
+
+       #leftServerPane .row .col-sm-6.col-xs-12.text-right:last-child{
+         margin-left: -20px;padding-right:0px;
+       }
+      
+       #nic{
+          width: 110%;
+       }
+       #nic .panel.panel-default{
+          width: 103%;
+       }
+
+        #nic tr:first-child td:last-child{
+          border-right: 1px solid #ddd;
+       }
+        #serverParent .col-sm-6:first-child {margin-left: -5px;}
+       
+        #leftServerPane .col-sm-8{margin-left: -16px;}
+
+ }
+ 
+ 
+ @media (max-width: 320px) {
+        #nic{
+          width: 117%;
+        }
+        #leftServerPane .col-sm-8{padding-left: 0px;padding-right: 9px;margin-left: -19px;}
+
+        #fileInfo {font-size: 12px;}
+        #serverParent {margin-right: 9px;}
+        #leftServerPane {width: 104%;}
+        #leftServerPane .row .row {margin-right: -19px;}
+        #url {text-align: justify;} 
+ }

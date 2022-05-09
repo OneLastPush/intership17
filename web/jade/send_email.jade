@@ -1,0 +1,97 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet' href='js/jquery/jquery-ui/jquery-ui.min.css')
+	script(src='js/jquery/jquery-ui/jquery-ui.min.js')
+
+	script(src='js/jquery/jquery-browser/jquery.browser.min.js')
+
+	link(rel='stylesheet' href='js/jquery/timepicker-addon/jquery-ui-timepicker-addon.min.css')
+	script(src='js/jquery/timepicker-addon/jquery-ui-timepicker-addon.min.js')
+
+	script(defer src='js/util/TemplateForm.js')
+	script(defer src='js/util/formHelpers.js')
+	script(defer src='js/send_email.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-envelope-o
+			span
+				|  #{loc.header.sendEmail}
+		.panel-body
+			.col-xs-12.col-sm-5.col-md-4.col-lg-3
+				h4
+					span
+						|  #{loc[page].to}
+				.input-group.form-group
+					.input-group-btn#emailSelectDropdown.dropdown
+						button(data-toggle='dropdown').btn.btn-default.dropdown-toggle
+							span
+								span
+									|  #{loc[page].group} 
+							span.caret
+						ul(role='menu').dropdown-menu
+							li
+								a(value='group')=loc[page].emailsByGroup
+							li
+								a(value='custom')=loc[page].customEmail
+							li
+								a(value='all')=loc[page].addAllKnownEmails
+					input(type='text').form-control.hidden#inputEmail
+					select.selectpicker.form-control#selectEmail
+					.input-group-btn
+						button.btn.btn-default#addEmail
+							span
+								|  #{loc[page].add}
+				.overflow.max-height-400
+					.list-group#emailList
+			.panel.col-xs-12.col-sm-7.col-md-8.col-lg-9
+				ul(role='tablist').nav.nav-tabs
+					li.dropdown.active
+						a(data-toggle='dropdown').dropdown-toggle
+							span
+								|  #{loc[page].predefined}
+							span.caret
+						ul(role='menu').dropdown-menu
+							li.active
+								a(id='restart' href='#predefined' role='tab' data-toggle='tab' tabindex='-1')=loc[page].restart
+							li
+								a(id='maintenance' href='#predefined' role='tab' data-toggle='tab' tabindex='-1')=loc[page].maintenance
+					li
+						a(href='#custom' role='tab' data-toggle='tab')
+							span
+								|  #{loc[page].custom}
+				.tab-content
+					.tab-pane.fade.in.active#predefined
+						.panel-body
+						.row
+						span.pull-right
+							button(data-loading-text="#{loc[page].sendingEmail}").btn.btn-default
+								span
+									|  #{loc[page].sendEmail}
+					.tab-pane.fade#custom
+						.panel-body
+							.form-group
+								label.control-label
+									span
+										|  #{loc[page].subject}
+								input(name='subject').form-control.required
+							.form-group
+								label.control-label
+									span
+										|  #{loc[page].body}
+								textarea(name='body' rows='15').form-control.required
+							.row
+							span.pull-right
+								button(data-loading-text="#{loc[page].sendingEmail}").btn.btn-default
+									span
+										|  #{loc[page].sendEmail}

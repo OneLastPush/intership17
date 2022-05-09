@@ -1,0 +1,24 @@
+{
+  "name": "env-vars",
+  "version": "2.0.0",
+  "description": "Easy envrionmental variable setup from a file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo none"
+  },
+  "keywords": [
+    "environment",
+    "envrionmental",
+    "variable",
+    "variables",
+    "lazy",
+    "easy",
+    "file"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "dependencies": {
+    "node-ini": "^1.0.0",
+    "smart-tracer": "file:../smart-tracer"
+  }
+}

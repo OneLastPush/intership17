@@ -1,0 +1,27 @@
+{
+  "name": "internal_db",
+  "version": "1.2.0",
+  "description": "mongodb or tingodb interface for easy db functionalities",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "tingodb": "^0.4.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "tingodb",
+    "mongodb",
+    "internal",
+    "database"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC"
+}

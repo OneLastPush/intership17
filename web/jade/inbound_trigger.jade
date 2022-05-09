@@ -1,0 +1,23 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/campaign/inboundTrigger.js')
+	script(src='js/inbound_trigger.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+		.panel-heading
+			span.fa.fa-bullseye
+			span
+				|  #{loc.header.inboundTrigger}
+
+		.panel-body
+			#broadcastTrigger

@@ -1,0 +1,116 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	script(src='js/util/formHelpers.js')
+	script(src='js/campaign/partitions.js')
+	script(src='js/campaign/userInfo.js')
+	script(src='js/campaign/fileChecker.js')
+	script(src='js/campaign/varVariables.js')
+	script(src='js/campaign/runAjax.js')
+	script(src='js/run.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-toggle-right
+				span
+					|  #{loc.run.run}
+			.panel-body
+				.center-block
+					form#runForm.col-xs-12
+						fieldset
+							legend
+								span Options
+							.col-sm-5.col-xs-12.col-sm-offset-1
+								#simpleDetails.max-width-600.vertical-padding
+
+										.form-group.verticalMargins
+											label(for="flowchartPathName").col-xs-12.reqLabel
+												span
+													|  #{loc.run.flowchartfile}
+											input(type="text", name="flowchartPathName")#flowchartPathName.col-xs-12.required.campFile.form-control
+
+
+										.form-group.verticalMargins
+											label(for="asmUser").col-xs-12.top-margin
+												span
+													|  #{loc.run.platformusername}
+											select(name="asmUser")#asmUser.selectpicker.col-xs-12.form-control
+
+
+										.form-group.verticalMargins
+											label(for="partition").col-xs-12
+												span
+													|  #{loc.log_viewer.partition}
+											select(name="partition")#partition.selectpicker.col-xs-12.form-control
+
+
+										span.col-xs-12.col-md-6
+											input(type="checkbox", name="synchronous")#synchronousRun
+											label(for="synchronousRun")
+												span
+													|  #{loc.run.synchronousrun}
+										
+
+										#datasourceDetails.vertical-padding.verticalMargins
+											#datasList
+													//-
+													//- 	input(type="text", name="dataSource0", placeHolder='Database source').col-xs-12
+													//- 	span#removeDbSource.hover-highlight.clickable.col-xs-1
+													//- 		span.fa.fa-times.medium-padding
+													//-
+													//- 	.col-xs-12
+													//- 		input(type="text", name="dbUser0", placeHolder='Database username').col-xs-5.small-padding.small-margin
+													//- 		input(type="password", name="dbPassword0", placeHolder='Database password').col-xs-6.small-padding.small-margin
+
+
+							.col-xs-12.col-sm-5
+								#advancedDetails.max-width-600.vertical-padding
+									#filesDetails
+											.form-group
+												label(for="catalogFile").col-xs-12
+													span
+														|  #{loc.run.catalogfile}
+												input(type="text", name="catalogFile")#catalogFile.col-xs-12.campFile.form-control
+
+											.form-group
+												label(for="xmlFilename").col-xs-12.top-margin
+													span
+														|  #{loc.run.xmlfile}
+												input(type="text", name="xmlFilename")#xmlFilename.col-xs-12.form-control
+
+											.form-group
+												label(for="newLogPath").col-xs-12.top-margin
+													span
+														|  #{loc.run.newlogfile}
+												input(type="text", name="newLogPath")#newLogPath.col-xs-12.form-control.bottom-margin
+
+											#variableDetails.vertical-padding
+												#varList
+													//-	.col-xs-12#v0
+													//- 		input(type="text", name="varName0", placeHolder='Name').col-xs-5.small-padding.small-margin
+													//- 		input(type="text", name="varValue0", placeHolder='Value').col-xs-5.small-padding.small-margin
+
+											span#addVariable.btn.btn-default.verticalMargins
+												span.fa.fa-plus
+												span
+													|  #{loc.run.addvariable}
+
+				.row.col-xs-12.col-sm-11
+					input(type='submit', class="langbutton-runflowchart", data-loading-text='Starting flowchart...').btn.btn-default.pull-right
+			.container.max-width-900
+				ul#logs.list-group
+
+
+
+
+

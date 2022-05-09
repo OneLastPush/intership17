@@ -1,0 +1,7 @@
+<Product InventoryTagVersion="1.0">
+    <ProductName>WebSphere Application Server - Base</ProductName>
+    <ProductVersion>8.5.5</ProductVersion>
+    <SWGFMIDX>HWASBS855</SWGFMIDX>
+    <OCCode>SSEQTP</OCCode>
+    <ProductReleaseID>fe49902d0bc043faa7adcb5ba50faa05</ProductReleaseID>
+</Product>

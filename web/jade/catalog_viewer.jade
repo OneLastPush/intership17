@@ -1,0 +1,48 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet', href='js/xmlTree/xmlTree.css')
+	script(src='js/xmlTree/xmlTree.js')
+
+	script(src='js/util/formHelpers.js')
+	script(src='js/campaign/partitions.js')
+	script(src='js/campaign/fileChecker.js')
+	script(src='js/catalog_viewer.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-align-left
+				span
+					|   #{loc.catalog_viewer.catalogViewer}
+			.panel-body
+
+				.center-block.col-xs-12.col-sm-12.col-md-11.col-lg-10.unfloat.max-width-1200
+					form#catalogForm.row
+						#catalogDetails.col-md-5.col-xs-12
+							.row.verticalMargins
+								label(for="catFile").col-xs-5.col-md-6.reqLabel
+									span
+										|   #{loc.catalog_viewer.catalogViewer}
+								input(type="text", name="catFile", id="catFile").col-xs-6.small-padding.required.campFile
+							.row.verticalMargins
+								label(for="partition").col-xs-5.col-md-6
+									span
+										|   #{loc.catalog_viewer.partition}
+								select(name="partition", id="partition").selectpicker.col-xs-6.no-padding.no-margin
+
+						.row.verticalMargins.col-xs-12
+							input(type='submit', data-loading-text='#{loc.catalog_viewer.loadingCatalogXml}' value='#{loc.catalog_viewer.viewCatalogXml}').btn.btn-default.center-block
+
+
+					#catalogXML.pre-scrollable.max-height-500.insets.medium-padding.col-xs-12.col-md-11.col-lg-10.unfloat.center-block
+

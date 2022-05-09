@@ -1,0 +1,24 @@
+{
+	"target10": {
+		"protocol": "sftp",
+		"host": "10.0.0.186",
+		"port": 22,
+		"username": "ganna",
+		"password": "Cleargoals1"
+	},
+	"localhosts": {
+		"protocol": "ftps",
+		"host": "127.0.0.1",
+		"port": 21,
+		"key": "ftp.key",
+		"username": "ganna",
+		"password": "password"
+	},
+	"localhost": {
+		"protocol": "ftp",
+		"host": "127.0.0.1",
+		"port": 21,
+		"username": "ganna",
+		"password": "password"
+	}
+}

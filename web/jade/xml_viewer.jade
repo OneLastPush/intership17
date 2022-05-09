@@ -1,0 +1,39 @@
+//-
+	@version 2.0.0
+	@author Ganna Shmatova (2014)
+
+extends tpl/master_template
+
+block appendHead
+	link(rel='stylesheet', href='js/xmlTree/xmlTree.css')
+	script(src='js/xmlTree/xmlTree.js')
+
+	script(src='js/util/formHelpers.js')
+
+	script(src='js/xml_viewer.js')
+
+block content
+	br
+	br
+	br
+	br
+	#topPanel.panel.panel-primary.sideMargins
+
+		.panel-heading
+				span.fa.fa-file-code-o
+				span
+					|  #{loc.xml_viewer.xmlviewer}
+			.panel-body
+				.center-block.col-xs-12.col-sm-12.col-md-11.col-lg-10.unfloat.max-width-1200
+					form#xmlViewer.verticalMargins
+						label(for='path').col-xs-2.label-control
+							span
+								|  #{loc.xml_viewer.path}
+						.col-xs-10
+							input(type='text' name='path')#path.form-control
+						.row
+						.verticalMargins.col-xs-12
+							input(type='submit', class="langbutton-viewxml", data-loading-text='Loading XML...').btn.btn-default.center-block
+
+				.row.verticalMargins
+				#XMLdiv.pre-scrollable.max-height-500.insets.medium-padding.col-xs-12.col-md-11.col-lg-10.unfloat.center-block

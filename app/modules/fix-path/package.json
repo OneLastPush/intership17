@@ -1,0 +1,17 @@
+{
+  "name": "fix-path",
+  "version": "1.0.0",
+  "description": "Consistently makes paths across systems. Unix paths remain case sensitive, Window sare lower case except drive letter. / on Windows becomes app's drive letter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo none"
+  },
+  "keywords": [
+    "fix",
+    "path",
+    "unix",
+    "windows"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC"
+}

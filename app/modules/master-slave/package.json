@@ -1,0 +1,31 @@
+{
+  "name": "master-slave",
+  "version": "3.0.3",
+  "description": "Master-slave configured express servser",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -b"
+  },
+  "keywords": [
+    "master",
+    "slave",
+    "express",
+    "authentication",
+    "cluster"
+  ],
+  "author": "Ganna Shmatova",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "errors": "file:../errors",
+    "express": "^4.12.4",
+    "request": "^2.58.0",
+    "smart-tracer": "file:../smart-tracer"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "supertest": "^1.2.0",
+    "tracer": "^0.8.3"
+  }
+}
